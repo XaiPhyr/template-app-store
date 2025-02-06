@@ -1,0 +1,9 @@
+server:
+  jwt_key: app-store
+
+smtp:
+  sender: noreply-rdev@local
+  host: app_mail
+  port: 1025
+  user: ''
+  pass: ''

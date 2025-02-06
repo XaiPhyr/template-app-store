@@ -1,0 +1,121 @@
+<script setup lang="ts">
+  const props = defineProps({
+    item: {
+      type: Object,
+      default: () => null,
+    },
+    display: {
+      type: String,
+      default: 'grid',
+    },
+  });
+
+  const item = computed(() => {
+    return props.item;
+  });
+
+  const cardTitleRef: any = ref(null);
+
+  const addToCart = (item: any) => {
+    console.log(item);
+  };
+
+  const wishList = (item: any) => {
+    console.log('WISHLIST: ', item);
+  };
+</script>
+
+<template>
+  <div class="">
+    <div class="border hover:border-slate-400" v-if="display === 'grid'">
+      <div class="pt-1 px-1 hidden md:block h-64">
+        <img
+          class="object-fill h-full w-full"
+          src="https://fastly.picsum.photos/id/13/2500/1667.jpg?hmac=SoX9UoHhN8HyklRA4A3vcCWJMVtiBXUg0W4ljWTor7s"
+        />
+      </div>
+      <div class="p-5">
+        <div
+          ref="cardTitleRef"
+          class="text-base font-semibold tracking-wide truncate hover:overflow-visible hover:whitespace-normal hover:text-ellipsis"
+          :title="item.name"
+        >
+          {{ item.name }}
+        </div>
+        <div class="text-xs text-slate-500">{{ item.category }}</div>
+        <div class="text-sm mt-2 md:hidden block">{{ item.description }}</div>
+        <div class="text-sm mt-2">
+          {{ formatCurrencies(item.price) }}
+        </div>
+
+        <div class="flex justify-end mt-5 gap-1">
+          <button
+            @click="addToCart(item)"
+            class="bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 py-1 rounded w-full text-white"
+          >
+            Add to Cart
+          </button>
+          <button
+            @click="wishList(item)"
+            class="border border-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 hover:text-white rounded px-3 py-1 flex justify-center items-center"
+          >
+            <HeartIcon size="14" class=""></HeartIcon>
+          </button>
+          <button
+            @click="addToCart(item)"
+            class="border border-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 hover:text-white rounded px-3 py-1 flex justify-center items-center"
+          >
+            <BarChartIcon size="14" class=""></BarChartIcon>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="border hover:border-slate-400" v-if="display === 'list'">
+      <div class="xl:grid xl:grid-cols-5 gap-4">
+        <div class="py-1 px-1 hidden md:block h-full w-full">
+          <img
+            class="object-cover h-full"
+            src="https://fastly.picsum.photos/id/13/2500/1667.jpg?hmac=SoX9UoHhN8HyklRA4A3vcCWJMVtiBXUg0W4ljWTor7s"
+          />
+        </div>
+
+        <div class="p-5 col-span-4">
+          <div
+            ref="cardTitleRef"
+            class="text-base font-semibold tracking-wide truncate hover:overflow-visible hover:whitespace-normal hover:text-ellipsis"
+            :title="item.name"
+          >
+            {{ item.name }}
+          </div>
+          <div class="text-xs text-slate-500">{{ item.category }}</div>
+          <div class="text-sm mt-2">{{ item.description }}</div>
+          <div class="text-sm mt-2">
+            {{ formatCurrencies(item.price) }}
+          </div>
+
+          <div class="flex justify-end mt-5 gap-1">
+            <button
+              @click="addToCart(item)"
+              class="bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 py-1 rounded w-full text-white"
+            >
+              Add to Cart
+            </button>
+            <button
+              @click="wishList(item)"
+              class="border border-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 hover:text-white rounded px-3 py-1 flex justify-center items-center"
+            >
+              <HeartIcon size="14" class=""></HeartIcon>
+            </button>
+            <button
+              @click="addToCart(item)"
+              class="border border-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 hover:text-white rounded px-3 py-1 flex justify-center items-center"
+            >
+              <BarChartIcon size="14" class=""></BarChartIcon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

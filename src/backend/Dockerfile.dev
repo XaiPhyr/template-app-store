@@ -1,0 +1,11 @@
+FROM golang:latest
+
+RUN apt update & apt upgrade
+WORKDIR /app/src/backend
+COPY . .
+
+ARG APP_ENVIRONMENT=dev
+
+EXPOSE ${HTTP_PORT}
+
+CMD go mod tidy && go run .
