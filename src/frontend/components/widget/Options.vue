@@ -45,7 +45,7 @@
               @click="selectDisplay('grid')"
               class="w-full bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 text-white p-2 flex text-center justify-center"
             >
-              <i class="pi pi-objects-column"></i>
+              <i class="pi pi-th-large"></i>
             </button>
           </div>
           <div class="w-full">

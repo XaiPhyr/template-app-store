@@ -16,6 +16,10 @@
       type: Array,
       default: [0, 0],
     },
+    isCategoryReset: {
+      type: Boolean,
+      default: false,
+    },
   });
 
   const modelSortByName = defineModel('sortByName');
@@ -96,6 +100,15 @@
 
     return '';
   };
+
+  watch(
+    () => props.isCategoryReset,
+    (value) => {
+      if (value) {
+        multiSelectedCategory.value = [];
+      }
+    }
+  );
 </script>
 
 <template>

@@ -27,6 +27,7 @@
   const sortByDate = ref('');
   const display = ref('grid');
   const adjustedPriceRange = ref('');
+  const resetCategory = ref(false);
 
   onMounted(() => {
     loadCategories();
@@ -178,6 +179,10 @@
     sortByDate.value = '';
     adjustedPriceRange.value = '';
     priceRange.value = originalPriceRange.value;
+    selectedCategory.value = '';
+    resetCategory.value = true;
+
+    router.replace(`/shop`);
 
     loadProducts();
   };
@@ -211,6 +216,7 @@
             @selected-category="(v) => onSelectCategory(v)"
             @see-more-categories="(v) => onSeeMoreCategories()"
             :categories="itemsCategories"
+            :is-category-reset="resetCategory"
           />
 
           <WidgetFilter

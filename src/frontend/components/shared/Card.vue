@@ -28,11 +28,17 @@
 <template>
   <div class="">
     <div class="border hover:border-slate-400" v-if="display === 'grid'">
-      <div class="pt-1 px-1 hidden md:block h-64">
+      <div class="relative pt-1 px-1 hidden md:block h-64">
         <img
           class="object-fill h-full w-full"
           src="https://fastly.picsum.photos/id/13/2500/1667.jpg?hmac=SoX9UoHhN8HyklRA4A3vcCWJMVtiBXUg0W4ljWTor7s"
         />
+
+        <div
+          class="hover:cursor-pointer absolute top-2 right-2 bg-blue-500 text-white px-3 py-1 text-xs"
+        >
+          #Tag
+        </div>
       </div>
       <div class="p-5">
         <div
@@ -56,10 +62,18 @@
             Add to Cart
           </button>
           <button
+            title="wishlist"
             @click="wishList(item)"
             class="border border-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 hover:text-white rounded px-3 py-1 flex justify-center items-center"
           >
             <i class="pi pi-heart"></i>
+          </button>
+          <button
+            title="view"
+            @click="wishList(item)"
+            class="border border-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 hover:text-white rounded px-3 py-1 flex justify-center items-center"
+          >
+            <i class="pi pi-eye"></i>
           </button>
         </div>
       </div>
@@ -96,10 +110,18 @@
               Add to Cart
             </button>
             <button
+              title="wishlist"
               @click="wishList(item)"
               class="border border-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 hover:text-white rounded px-3 py-1 flex justify-center items-center"
             >
               <i class="pi pi-heart"></i>
+            </button>
+            <button
+              title="view"
+              @click="wishList(item)"
+              class="border border-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 hover:text-white rounded px-3 py-1 flex justify-center items-center"
+            >
+              <i class="pi pi-eye"></i>
             </button>
           </div>
         </div>
