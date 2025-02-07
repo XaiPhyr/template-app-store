@@ -44,7 +44,7 @@ const initApi = (item: ApiInterface) => {
 const createInteceptorRequest = (init: AxiosInstance) => {
   init.interceptors.request.use(
     (res) => {
-      console.log('INTERCEPTOR REQUEST: ', res);
+      // console.log('INTERCEPTOR REQUEST: ', res);
       return res;
     },
     (err) => {
@@ -56,7 +56,7 @@ const createInteceptorRequest = (init: AxiosInstance) => {
 const createInteceptorResponse = (init: AxiosInstance) => {
   init.interceptors.response.use(
     (res) => {
-      console.log('INTERCEPTOR RESPONSE: ', res);
+      // console.log('INTERCEPTOR RESPONSE: ', res);
       return res;
     },
     (err) => {

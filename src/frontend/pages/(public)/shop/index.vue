@@ -9,43 +9,38 @@
 
   const router = useRouter();
 
-  const items: any = ref([]);
-  const itemsCategories: any = ref([]);
-  const rowSizeCategories: any = ref(5);
-  const totalPageCategories: any = ref(0);
-  const priceRange: any = ref([]);
-  const originalPriceRange: any = ref([]);
+  const display = ref('grid');
   const keyword = ref('');
   const isLoading: Ref<boolean, boolean> = ref(false);
-  const selectedCategory: Ref<string, number> | any = ref('');
-  const rowPage = ref(1);
-  const totalPage = ref(0);
-  const rowSize = ref(10);
-  const totalSize = ref(0);
+
+  const products: any = ref([]);
+  const productsPage = ref(1);
+  const productsTotalPage = ref(0);
+  const productsSize = ref(10);
+  const productsTotalSize = ref(0);
+
+  const priceRange: any = ref([]);
+  const adjustedPriceRange = ref('');
+  const originalPriceRange: any = ref([]);
+
   const sortByName = ref('');
   const sortByPrice = ref('');
   const sortByDate = ref('');
-  const display = ref('grid');
-  const adjustedPriceRange = ref('');
-  const resetCategory = ref(false);
+
+  const selectedCategory: Ref<string, number> | any = ref('');
 
   onMounted(() => {
-    loadCategories();
     loadProducts();
   });
 
   const loadProducts = async () => {
-    items.value = [];
+    products.value = [];
     isLoading.value = true;
     const params: any = {
       url: '/products',
       method: 'read',
-      params: { page: rowPage.value },
+      params: { page: productsPage.value, size: productsSize.value },
     };
-
-    if (rowSize.value) {
-      params.params.size = rowSize.value;
-    }
 
     if (keyword.value !== '') {
       params.params.q = keyword.value;
@@ -53,6 +48,10 @@
 
     if (adjustedPriceRange.value) {
       params.params.qExt = `price=${adjustedPriceRange.value}`;
+    }
+
+    if (selectedCategory.value.length > 0) {
+      params.params.qExt = `category=${selectedCategory.value}`;
     }
 
     const sortItems = [];
@@ -72,10 +71,6 @@
       params.params.sort = sortItems.join(',');
     }
 
-    if (selectedCategory.value.length > 0) {
-      params.params.qExt = `category=${selectedCategory.value}`;
-    }
-
     try {
       const { data } = await initApi(params);
 
@@ -87,7 +82,7 @@
         }
 
         if (results) {
-          items.value = results;
+          products.value = results;
         }
 
         if (priceRange.value.length === 0) {
@@ -95,23 +90,14 @@
         }
 
         originalPriceRange.value = [min_price, max_price];
-        totalSize.value = total;
-        totalPage.value = Math.ceil(total / rowSize.value);
+        productsTotalSize.value = total;
+        productsTotalPage.value = Math.ceil(total / productsSize.value);
       }
 
       isLoading.value = false;
     } catch (error) {
       isLoading.value = false;
     }
-  };
-
-  const loadCategories = async () => {
-    const { total, results } = await readCategories({
-      size: rowSizeCategories.value,
-    });
-
-    itemsCategories.value = results;
-    totalPageCategories.value = total;
   };
 
   const onSelectCategory = (item: any) => {
@@ -125,13 +111,14 @@
     selectedCategory.value = item;
 
     router.replace(`/shop?category=${encodeURIComponent(item)}`);
-    rowPage.value = 1;
+    productsPage.value = 1;
 
     loadProducts();
   };
 
-  const onSelectRowSize = (item: number) => {
-    rowSize.value = item;
+  const onSelectproductsSize = (item: number) => {
+    productsSize.value = item;
+    productsPage.value = 1;
 
     loadProducts();
   };
@@ -143,46 +130,33 @@
     loadProducts();
   };
 
-  const onSeeMoreCategories = () => {
-    if (rowSizeCategories.value > totalPageCategories.value) {
-      return;
-    }
-
-    rowSizeCategories.value += 10;
-
-    loadCategories();
-  };
-
-  const pagination = (page: string) => {
+  const onSelectPage = (page: string) => {
     if (page === 'next') {
-      if (rowPage.value < totalPage.value) {
-        rowPage.value += 1;
+      if (productsPage.value < productsTotalPage.value) {
+        productsPage.value += 1;
         loadProducts();
         return;
       }
-
-      return;
     }
 
-    if (rowPage.value > 1) {
-      rowPage.value -= 1;
+    if (productsPage.value > 1) {
+      productsPage.value -= 1;
       loadProducts();
       return;
     }
-
-    return;
   };
 
   const onResetFilter = () => {
+    router.replace(`/shop`);
+
     sortByName.value = '';
     sortByPrice.value = '';
     sortByDate.value = '';
-    adjustedPriceRange.value = '';
-    priceRange.value = originalPriceRange.value;
-    selectedCategory.value = '';
-    resetCategory.value = true;
 
-    router.replace(`/shop`);
+    priceRange.value = originalPriceRange.value;
+    adjustedPriceRange.value = '';
+
+    selectedCategory.value = '';
 
     loadProducts();
   };
@@ -195,7 +169,7 @@
         <div class="py-4 pl-4 hidden xl:block">
           <WidgetOptions
             class="mb-4"
-            @selected-row-size="(v) => onSelectRowSize(v)"
+            @selected-row-size="(v) => onSelectproductsSize(v)"
             @selected-display="(v) => (display = v)"
           />
 
@@ -214,9 +188,6 @@
             class="mb-4"
             filter="categories"
             @selected-category="(v) => onSelectCategory(v)"
-            @see-more-categories="(v) => onSeeMoreCategories()"
-            :categories="itemsCategories"
-            :is-category-reset="resetCategory"
           />
 
           <WidgetFilter
@@ -257,7 +228,7 @@
               <div class="w-64 flex gap-4 justify-center">
                 <div class="">
                   <button
-                    @click="pagination('previous')"
+                    @click="onSelectPage('previous')"
                     title="Grid"
                     class="bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 text-white px-4 py-2 flex"
                   >
@@ -267,11 +238,13 @@
                   </button>
                 </div>
                 <div class="text-center content-center w-32">
-                  <div class="">{{ rowPage }} / {{ totalPage }}</div>
+                  <div class="">
+                    {{ productsPage }} / {{ productsTotalPage }}
+                  </div>
                 </div>
                 <div class="">
                   <button
-                    @click="pagination('next')"
+                    @click="onSelectPage('next')"
                     title="List"
                     class="bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 text-white px-4 py-2 flex"
                   >
@@ -288,9 +261,9 @@
             :class="`grid md:grid-cols-3 ${
               display === 'grid' ? 'xl:grid-cols-4' : 'xl:grid-cols-1'
             } gap-4`"
-            v-if="items.length > 0"
+            v-if="products.length > 0"
           >
-            <div class="" v-for="(item, index) in items" :key="index">
+            <div class="" v-for="(item, index) in products" :key="index">
               <SharedCard :display="display" :item="item" />
             </div>
           </div>
@@ -299,7 +272,7 @@
             :class="`grid md:grid-cols-3 ${
               display === 'grid' ? 'xl:grid-cols-4' : 'xl:grid-cols-1'
             } gap-4`"
-            v-else-if="items.length === 0 && isLoading"
+            v-else-if="products.length === 0 && isLoading"
           >
             <div class="" v-for="(_, index) in 10" :key="index">
               <SkeletonCard />

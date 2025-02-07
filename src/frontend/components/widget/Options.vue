@@ -37,7 +37,7 @@
           </div>
         </div>
 
-        <div class="grid grid-cols-3 gap-4 mb-4">
+        <div class="grid grid-cols-3 gap-4">
           <div class="content-center">Display:</div>
           <div class="w-full">
             <button

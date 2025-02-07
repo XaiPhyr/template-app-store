@@ -1,4 +1,5 @@
 import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
 
 const formatDateTime = (
   date: string | number,
@@ -19,4 +20,14 @@ const unixDateTime = (date: string | number | Date) => {
   return dayjs(date).unix();
 };
 
-export { formatDateTime, unixDateTime };
+const readableDateTime = (date: string | number) => {
+  if (!date) {
+    return '';
+  }
+
+  dayjs.extend(relativeTime);
+
+  return dayjs().to(dayjs(date));
+};
+
+export { formatDateTime, unixDateTime, readableDateTime };

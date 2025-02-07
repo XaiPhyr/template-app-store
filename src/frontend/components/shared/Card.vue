@@ -1,4 +1,6 @@
 <script setup lang="ts">
+  import dayjs from 'dayjs';
+
   const props = defineProps({
     item: {
       type: Object,
@@ -9,6 +11,8 @@
       default: 'grid',
     },
   });
+
+  const popoverRef = ref();
 
   const item = computed(() => {
     return props.item;
@@ -23,6 +27,10 @@
   const wishList = (item: any) => {
     console.log('WISHLIST: ', item);
   };
+
+  const viewProduct = (event: any) => {
+    popoverRef.value.show(event);
+  };
 </script>
 
 <template>
@@ -35,9 +43,9 @@
         />
 
         <div
-          class="hover:cursor-pointer absolute top-2 right-2 bg-blue-500 text-white px-3 py-1 text-xs"
+          class="hover:cursor-pointer absolute top-1 right-1 bg-blue-500 text-white px-3 py-1 text-xs"
         >
-          #Tag
+          NEW
         </div>
       </div>
       <div class="p-5">
@@ -49,6 +57,9 @@
           {{ item.name }}
         </div>
         <div class="text-xs text-slate-500">{{ item.category }}</div>
+        <div class="text-xs text-slate-500">
+          Added: {{ readableDateTime(item.created_at) }}
+        </div>
         <div class="text-sm mt-2 md:hidden block">{{ item.description }}</div>
         <div class="text-sm mt-2">
           {{ formatCurrencies(item.price) }}
@@ -70,7 +81,7 @@
           </button>
           <button
             title="view"
-            @click="wishList(item)"
+            @click="viewProduct($event)"
             class="border border-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 hover:text-white rounded px-3 py-1 flex justify-center items-center"
           >
             <i class="pi pi-eye"></i>
@@ -97,6 +108,9 @@
             {{ item.name }}
           </div>
           <div class="text-xs text-slate-500">{{ item.category }}</div>
+          <div class="text-xs text-slate-500">
+            Added: {{ formatCurrencies(item.price) }}
+          </div>
           <div class="text-sm mt-2">{{ item.description }}</div>
           <div class="text-sm mt-2">
             {{ formatCurrencies(item.price) }}
@@ -118,7 +132,7 @@
             </button>
             <button
               title="view"
-              @click="wishList(item)"
+              @click="viewProduct($event)"
               class="border border-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 hover:text-white rounded px-3 py-1 flex justify-center items-center"
             >
               <i class="pi pi-eye"></i>
@@ -127,5 +141,11 @@
         </div>
       </div>
     </div>
+
+    <Popover ref="popoverRef">
+      <div class="w-64">
+        {{ item.description }}
+      </div>
+    </Popover>
   </div>
 </template>
