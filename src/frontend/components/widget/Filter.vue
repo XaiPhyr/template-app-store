@@ -88,6 +88,14 @@
       //
     },
   });
+
+  const isSelectedCategory = (item: string | any) => {
+    if (multiSelectedCategory.value.includes(item)) {
+      return 'font-bold';
+    }
+
+    return '';
+  };
 </script>
 
 <template>
@@ -104,7 +112,11 @@
               class="px-5 py-1 hover:cursor-pointer active:bg-gray-100"
               @click="selectCategory(name)"
             >
-              <div class="p-1">
+              <div :class="`p-1 ${isSelectedCategory(name)}`">
+                <i
+                  class="pi pi-check text-xs mr-2"
+                  v-if="isSelectedCategory(name)"
+                ></i>
                 {{ name }}
               </div>
             </div>

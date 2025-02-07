@@ -10,11 +10,7 @@ const config = defineNuxtConfig({
     },
   },
   css: ['./assets/css/global.css'],
-  modules: [
-    '@primevue/nuxt-module',
-    '@nuxtjs/tailwindcss',
-    'nuxt-feather-icons',
-  ],
+  modules: ['@primevue/nuxt-module', '@nuxtjs/tailwindcss'],
   primevue: {
     options: {
       theme: {

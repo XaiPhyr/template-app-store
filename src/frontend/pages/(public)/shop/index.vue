@@ -15,7 +15,6 @@
   const totalPageCategories: any = ref(0);
   const priceRange: any = ref([]);
   const originalPriceRange: any = ref([]);
-  const searchIcon = resolveComponent('SearchIcon');
   const keyword = ref('');
   const isLoading: Ref<boolean, boolean> = ref(false);
   const selectedCategory: Ref<string, number> | any = ref('');
@@ -125,6 +124,7 @@
     selectedCategory.value = item;
 
     router.replace(`/shop?category=${encodeURIComponent(item)}`);
+    rowPage.value = 1;
 
     loadProducts();
   };
@@ -234,28 +234,30 @@
               <span
                 class="absolute left-0 top-1/2 transform -translate-y-1/2 px-2 text-gray-500 hover:cursor-pointer"
               >
-                <component :is="searchIcon" />
+                <i class="pi pi-search"></i>
               </span>
               <input
                 @change="loadProducts"
                 v-model="keyword"
                 type="text"
-                class="pl-10 pr-3 py-2 border w-full focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                class="pl-8 pr-3 py-2 border w-full focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 placeholder="Search"
               />
             </div>
           </div>
 
-          <div class="mb-4" v-if="items.length !== 0 && !isLoading">
+          <div class="mb-4">
             <div class="flex justify-center">
               <div class="w-64 flex gap-4 justify-center">
                 <div class="">
                   <button
                     @click="pagination('previous')"
                     title="Grid"
-                    class="bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 text-white px-2 py-1 flex text-center justify-center"
+                    class="bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 text-white px-4 py-2 flex"
                   >
-                    <ChevronLeftIcon /> <span class="pr-2">Back</span>
+                    <div class="">
+                      <i class="pi pi-chevron-left"></i>
+                    </div>
                   </button>
                 </div>
                 <div class="text-center content-center w-32">
@@ -265,9 +267,11 @@
                   <button
                     @click="pagination('next')"
                     title="List"
-                    class="bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 text-white px-2 py-1 flex text-center justify-center"
+                    class="bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 text-white px-4 py-2 flex"
                   >
-                    <span class="pl-2">Next</span> <ChevronRightIcon />
+                    <div class="">
+                      <i class="pi pi-chevron-right"></i>
+                    </div>
                   </button>
                 </div>
               </div>

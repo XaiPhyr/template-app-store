@@ -1,6 +1,5 @@
 <script setup lang="ts">
   const sideNavRef: any = ref(null);
-  const menuIcon = resolveComponent('MenuIcon');
 
   const showNav = (action: string) => {
     if (sideNavRef.value) {
@@ -21,9 +20,9 @@
   <div class="">
     <button
       @click="showNav('show')"
-      class="fixed left-0 top-1/2 -translate-y-1/2 p-4 bg-indigo-500 text-white"
+      class="fixed left-0 top-1/2 -translate-y-1/2 px-4 py-2 bg-indigo-500 text-white"
     >
-      <component :is="menuIcon" />
+      <i class="pi pi-bars"></i>
     </button>
 
     <div
@@ -41,9 +40,9 @@
 
       <button
         @click="showNav('hide')"
-        class="fixed left-64 top-1/2 -translate-y-1/2 p-4 bg-indigo-500 shadow-lg text-white"
+        class="fixed left-64 top-1/2 -translate-y-1/2 px-4 py-2 bg-indigo-500 shadow-lg text-white"
       >
-        <component :is="menuIcon" />
+        <i class="pi pi-bars"></i>
       </button>
     </div>
   </div>

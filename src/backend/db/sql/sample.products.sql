@@ -1,147 +1,1057 @@
-INSERT INTO public.products VALUES (1000, 'UltraBoost Sneakers', 'High-performance running shoes designed for comfort and speed.', 129.99, 'O', 'dev', true, '51b3b04c-3c43-416f-b027-c317ceb66970', '2025-01-30 14:41:59.509527+00', '2025-01-30 14:41:59.509527+00', NULL);
-INSERT INTO public.products VALUES (1001, 'SmartHome 360 Camera', 'A security camera with 360-degree coverage and HD streaming.', 199.50, 'O', 'dev', true, '192e0728-42ed-4270-9c51-5aaca28ae1b1', '2025-01-30 14:41:59.520603+00', '2025-01-30 14:41:59.520603+00', NULL);
-INSERT INTO public.products VALUES (1002, 'EcoFresh Water Bottle', 'A reusable water bottle made from eco-friendly materials.', 19.99, 'O', 'dev', true, 'f8b22834-82a6-46a1-ae49-26537a6762d1', '2025-01-30 14:41:59.524068+00', '2025-01-30 14:41:59.524068+00', NULL);
-INSERT INTO public.products VALUES (1003, 'PowerMax 5000 Portable Charger', 'A high-capacity power bank for quick device charging on-the-go.', 59.75, 'O', 'dev', true, '5f8a3f93-558c-48d2-af19-f5a0339f9b11', '2025-01-30 14:41:59.527483+00', '2025-01-30 14:41:59.527483+00', NULL);
-INSERT INTO public.products VALUES (1004, 'NoiseCancelling Headphones', 'Wireless headphones that eliminate background noise for an immersive audio experience.', 249.99, 'O', 'dev', true, '32aaa582-285d-49de-8827-7eace3cd65b2', '2025-01-30 14:41:59.531085+00', '2025-01-30 14:41:59.531085+00', NULL);
-INSERT INTO public.products VALUES (1005, 'LuxeCouch Leather Sofa', 'A premium leather sofa with modern design and superior comfort.', 899.00, 'O', 'dev', true, '0716f967-3239-4d1a-82b2-bb4403f84e69', '2025-01-30 14:41:59.534926+00', '2025-01-30 14:41:59.534926+00', NULL);
-INSERT INTO public.products VALUES (1006, 'MegaPhone 12 Pro', 'The latest smartphone with enhanced camera and performance features.', 999.99, 'O', 'dev', true, '71da8a4b-be7a-473f-b100-ec819c8f21f4', '2025-01-30 14:41:59.538504+00', '2025-01-30 14:41:59.538504+00', NULL);
-INSERT INTO public.products VALUES (1007, 'SmartFit Fitness Tracker', 'A wearable tracker that monitors activity, sleep, and heart rate.', 99.99, 'O', 'dev', true, '421d9faa-657c-408b-a831-cb5dddb4e1b1', '2025-01-30 14:41:59.543796+00', '2025-01-30 14:41:59.543796+00', NULL);
-INSERT INTO public.products VALUES (1008, 'AirPure Air Purifier', 'An air purifier that eliminates pollutants and allergens for clean air.', 149.50, 'O', 'dev', true, '12ab481f-5d6b-49eb-9405-3bbd7e9ace85', '2025-01-30 14:41:59.547584+00', '2025-01-30 14:41:59.547584+00', NULL);
-INSERT INTO public.products VALUES (1009, 'GlowUp LED Desk Lamp', 'A sleek desk lamp with adjustable brightness and color settings.', 39.99, 'O', 'dev', true, '75b37777-817b-4ed3-a612-95be9af66e01', '2025-01-30 14:41:59.555724+00', '2025-01-30 14:41:59.555724+00', NULL);
-INSERT INTO public.products VALUES (1010, 'TravelPro Carry-On Bag', 'A durable, lightweight suitcase designed for hassle-free travel.', 89.99, 'O', 'dev', true, '7593494e-610f-4fda-a522-0774e8bb9fe7', '2025-01-30 14:41:59.55878+00', '2025-01-30 14:41:59.55878+00', NULL);
-INSERT INTO public.products VALUES (1011, 'AutoClean Robot Vacuum', 'A robotic vacuum that automatically cleans your floors with advanced mapping technology.', 399.99, 'O', 'dev', true, '00c8fce9-92d9-4c7b-9e7d-43af857e9fd7', '2025-01-30 14:41:59.562984+00', '2025-01-30 14:41:59.562984+00', NULL);
-INSERT INTO public.products VALUES (1012, 'PowerGlide Electric Scooter', 'An electric scooter designed for city commutes with a long-lasting battery.', 499.99, 'O', 'dev', true, 'b23ebbd2-e617-401c-8191-bc574dad24de', '2025-01-30 14:41:59.567711+00', '2025-01-30 14:41:59.567711+00', NULL);
-INSERT INTO public.products VALUES (1013, 'ProChef 12-Piece Knife Set', 'A professional-grade kitchen knife set with ergonomic handles and sharp blades.', 129.00, 'O', 'dev', true, 'cf1f749d-38b1-454b-b92b-84336b156eeb', '2025-01-30 14:41:59.571052+00', '2025-01-30 14:41:59.571052+00', NULL);
-INSERT INTO public.products VALUES (1014, 'HydroFit Smart Water Bottle', 'A water bottle that tracks your hydration levels and reminds you to drink more water.', 39.95, 'O', 'dev', true, 'f7881971-71e7-464d-a0ec-e1278d6ea5af', '2025-01-30 14:41:59.574214+00', '2025-01-30 14:41:59.574214+00', NULL);
-INSERT INTO public.products VALUES (1015, 'Apple iPhone 13 Pro', 'The iPhone 13 Pro comes with a stunning Super Retina XDR display and the powerful A15 Bionic chip.', 999.99, 'O', 'dev', true, 'c9572f55-08dc-4afd-a29d-736171f91b23', '2025-02-03 16:30:17.944224+00', '2025-02-03 16:30:17.944224+00', NULL);
-INSERT INTO public.products VALUES (1016, 'Samsung Galaxy S21 Ultra', 'Samsung’s flagship phone with a massive 6.8-inch display, 5G, and advanced camera system.', 1199.99, 'O', 'dev', true, '072647e8-c234-4b49-a365-beb214d187f9', '2025-02-03 16:30:17.944224+00', '2025-02-03 16:30:17.944224+00', NULL);
-INSERT INTO public.products VALUES (1017, 'Sony WH-1000XM4', 'Noise-canceling headphones with industry-leading sound quality and a long battery life.', 349.99, 'O', 'dev', true, 'd99d9a94-dcdc-4573-a445-99f30ddd7c21', '2025-02-03 16:30:17.944224+00', '2025-02-03 16:30:17.944224+00', NULL);
-INSERT INTO public.products VALUES (1018, 'Microsoft Surface Pro 8', 'A powerful 2-in-1 tablet with Windows 11, a detachable keyboard, and excellent display clarity.', 1099.99, 'O', 'dev', true, 'ffbd9d42-95e8-495c-8c42-873efa6d1b45', '2025-02-03 16:30:17.944224+00', '2025-02-03 16:30:17.944224+00', NULL);
-INSERT INTO public.products VALUES (1019, 'NVIDIA GeForce RTX 3080', 'High-performance GPU for gamers and creators, offering ray tracing and incredible graphics performance.', 799.99, 'O', 'dev', true, '6fc2c02b-a605-4aff-9f4e-f3964c9445e7', '2025-02-03 16:30:17.944224+00', '2025-02-03 16:30:17.944224+00', NULL);
-INSERT INTO public.products VALUES (1020, 'Canon EOS 90D', 'A high-performance DSLR camera with a 32.5 MP sensor and 4K video recording capabilities.', 1199.99, 'O', 'dev', true, '720bb165-d09b-46ef-aa17-fe47dbfde4a5', '2025-02-03 16:30:17.944224+00', '2025-02-03 16:30:17.944224+00', NULL);
-INSERT INTO public.products VALUES (1021, 'Samsung 65" QLED TV', 'A large 65-inch QLED TV with 4K resolution and impressive contrast for a rich viewing experience.', 1499.99, 'O', 'dev', true, 'bb7b7e94-db22-4f01-9f90-a3cd73987686', '2025-02-03 16:30:17.944224+00', '2025-02-03 16:30:17.944224+00', NULL);
-INSERT INTO public.products VALUES (1022, 'Apple Watch Series 7', 'Smartwatch with a larger display, faster charging, and enhanced health tracking features.', 399.99, 'O', 'dev', true, 'a337847a-ea1f-4f65-bc57-83f209db5cbd', '2025-02-03 16:30:17.944224+00', '2025-02-03 16:30:17.944224+00', NULL);
-INSERT INTO public.products VALUES (1023, 'GoPro HERO 10 Black', 'Waterproof action camera capable of shooting 5.3K video at 60fps and capturing ultra-smooth footage.', 499.99, 'O', 'dev', true, 'b472041d-2242-417b-8db3-35d83e9e75f9', '2025-02-03 16:30:17.944224+00', '2025-02-03 16:30:17.944224+00', NULL);
-INSERT INTO public.products VALUES (1024, 'Amazon Echo Show 10', 'Smart display with Alexa integration, a rotating screen, and a premium speaker system for great sound.', 249.99, 'O', 'dev', true, '6523a793-2956-46c3-ac55-6f635435928b', '2025-02-03 16:30:17.944224+00', '2025-02-03 16:30:17.944224+00', NULL);
-INSERT INTO public.products VALUES (1025, 'Sony PlayStation 5 Digital Edition', 'Next-gen gaming console offering incredible performance with digital-only downloads and 4K gaming.', 499.99, 'O', 'dev', true, 'ed06f4d1-c0ad-4e44-9e6c-7f7cfcebd033', '2025-02-03 16:30:17.944224+00', '2025-02-03 16:30:17.944224+00', NULL);
-INSERT INTO public.products VALUES (1026, 'Dyson V11 Torque Drive', 'Cordless vacuum with strong suction power, smart technology, and a long battery life for superior cleaning.', 699.99, 'O', 'dev', true, 'a097fb4f-288b-4979-b623-c725282d3dd6', '2025-02-03 16:30:17.944224+00', '2025-02-03 16:30:17.944224+00', NULL);
-INSERT INTO public.products VALUES (1027, 'Lenovo ThinkPad X1 Carbon', 'Business ultrabook with excellent battery life, a lightweight design, and powerful performance.', 1499.99, 'O', 'dev', true, '9922e017-abfd-441a-99c6-ceaafe0a8c98', '2025-02-03 16:30:17.944224+00', '2025-02-03 16:30:17.944224+00', NULL);
-INSERT INTO public.products VALUES (1028, 'LG OLED55CXPUA', '55-inch 4K OLED TV with perfect black levels, vibrant colors, and excellent motion handling.', 1399.99, 'O', 'dev', true, '9732ef6e-79e6-4960-8b87-d1c82c451155', '2025-02-03 16:30:17.944224+00', '2025-02-03 16:30:17.944224+00', NULL);
-INSERT INTO public.products VALUES (1029, 'Fujifilm X-T4', 'Mirrorless camera with a 26.1 MP sensor, 4K video recording, and excellent autofocus performance.', 1699.99, 'O', 'dev', true, 'a8f9680d-0dd9-4bff-aaee-aab672f51f0c', '2025-02-03 16:30:17.944224+00', '2025-02-03 16:30:17.944224+00', NULL);
-INSERT INTO public.products VALUES (1030, 'Razer Blade 15', 'Slim gaming laptop featuring an NVIDIA RTX 3070 GPU, Intel i7 processor, and 144Hz display.', 1799.99, 'O', 'dev', true, '87d7ca2d-73c5-4ce5-b1f3-96ed13fcda3f', '2025-02-03 16:30:17.944224+00', '2025-02-03 16:30:17.944224+00', NULL);
-INSERT INTO public.products VALUES (1031, 'Google Pixel 6 Pro', 'Flagship phone from Google featuring an advanced camera system and Tensor chip for better AI performance.', 899.99, 'O', 'dev', true, '541d51ab-22f2-4384-b3a6-fef044f1af89', '2025-02-03 16:30:17.944224+00', '2025-02-03 16:30:17.944224+00', NULL);
-INSERT INTO public.products VALUES (1032, 'Apple MacBook Pro 16" M1 Pro', 'The 16-inch MacBook Pro with the M1 Pro chip offers impressive performance and a beautiful Liquid Retina XDR display.', 2499.99, 'O', 'dev', true, 'e802cd1a-0f93-4975-bf04-c32d0d4d627e', '2025-02-03 16:30:17.944224+00', '2025-02-03 16:30:17.944224+00', NULL);
-INSERT INTO public.products VALUES (1033, 'Bose SoundLink Flex', 'Portable Bluetooth speaker with high-quality sound, water-resistant design, and up to 12 hours of playtime.', 149.99, 'O', 'dev', true, 'c3ec9666-edee-4013-a595-f2a3328a6906', '2025-02-03 16:30:17.944224+00', '2025-02-03 16:30:17.944224+00', NULL);
-INSERT INTO public.products VALUES (1034, 'HP Spectre x360 14', 'Convertible laptop with an Intel Core i7 processor, a 3K OLED touch display, and sleek design.', 1399.99, 'O', 'dev', true, '735c3250-eaca-4950-8f85-78df13156b00', '2025-02-03 16:30:17.944224+00', '2025-02-03 16:30:17.944224+00', NULL);
-INSERT INTO public.products VALUES (1035, 'Apple MacBook Air M2', 'Lightweight laptop with the new M2 chip, offering great performance and long battery life.', 1199.99, 'O', 'dev', true, '85c2d9a0-71dd-464f-a466-e6cd884f5a73', '2025-02-03 16:31:08.654297+00', '2025-02-03 16:31:08.654297+00', NULL);
-INSERT INTO public.products VALUES (1036, 'Sony Alpha 7C', 'Compact full-frame mirrorless camera with fast autofocus and 4K video recording.', 1799.99, 'O', 'dev', true, 'd0f10e42-0cd2-470c-a730-20dcb8107e0d', '2025-02-03 16:31:08.654297+00', '2025-02-03 16:31:08.654297+00', NULL);
-INSERT INTO public.products VALUES (1037, 'Samsung Galaxy Z Flip 4', 'Compact foldable smartphone with a sleek design and powerful camera capabilities.', 999.99, 'O', 'dev', true, 'c6764149-2731-4e86-a32e-20d6ee579451', '2025-02-03 16:31:08.654297+00', '2025-02-03 16:31:08.654297+00', NULL);
-INSERT INTO public.products VALUES (1038, 'LG UltraWide Monitor 34WN80C-B', '34-inch ultra-wide curved monitor with high resolution and versatile connectivity options.', 329.99, 'O', 'dev', true, '69362e90-dc0f-4c7b-aed8-fcd4c01535de', '2025-02-03 16:31:08.654297+00', '2025-02-03 16:31:08.654297+00', NULL);
-INSERT INTO public.products VALUES (1039, 'Bose QuietComfort 35 II', 'Wireless over-ear headphones with excellent noise cancellation and a long-lasting battery.', 299.99, 'O', 'dev', true, '48478b17-ccdd-40bc-8cdc-ae4d28a27ea5', '2025-02-03 16:31:08.654297+00', '2025-02-03 16:31:08.654297+00', NULL);
-INSERT INTO public.products VALUES (1040, 'Nintendo Switch OLED Model', 'The Nintendo Switch with a larger OLED display and improved audio for handheld gaming.', 349.99, 'O', 'dev', true, '8a59dec9-b805-42df-9ecf-983b19eb7d2e', '2025-02-03 16:31:08.654297+00', '2025-02-03 16:31:08.654297+00', NULL);
-INSERT INTO public.products VALUES (1041, 'GoPro Max', '360-degree camera that shoots stunning video and photos, perfect for action-packed adventures.', 499.99, 'O', 'dev', true, '65e8efcf-5d51-4d9e-9cf7-f11acbabf933', '2025-02-03 16:31:08.654297+00', '2025-02-03 16:31:08.654297+00', NULL);
-INSERT INTO public.products VALUES (1042, 'Microsoft Xbox Series S', 'Affordable next-gen console offering fast load times and a smooth gaming experience.', 299.99, 'O', 'dev', true, '2a7bf458-72c2-4ae1-a1d5-4ee160b6b8ed', '2025-02-03 16:31:08.654297+00', '2025-02-03 16:31:08.654297+00', NULL);
-INSERT INTO public.products VALUES (1043, 'Samsung Galaxy Tab S8 Ultra', 'Android tablet with a large 14.6-inch display, perfect for multitasking and media consumption.', 1099.99, 'O', 'dev', true, '92753855-76d0-4a8b-92da-47519336d0b7', '2025-02-03 16:31:08.654297+00', '2025-02-03 16:31:08.654297+00', NULL);
-INSERT INTO public.products VALUES (1044, 'DJI Mini 2', 'Compact and lightweight drone with 4K video capture, perfect for casual drone enthusiasts.', 449.99, 'O', 'dev', true, '833ca1d0-362f-4b03-90bd-dea4e8d11d80', '2025-02-03 16:31:08.654297+00', '2025-02-03 16:31:08.654297+00', NULL);
-INSERT INTO public.products VALUES (1045, 'Oculus Quest 2 Elite Strap', 'An ergonomic strap that improves comfort during extended VR sessions with the Oculus Quest 2.', 49.99, 'O', 'dev', true, '857eb76b-bafa-4285-9cb9-651e8bb45958', '2025-02-03 16:31:08.654297+00', '2025-02-03 16:31:08.654297+00', NULL);
-INSERT INTO public.products VALUES (1046, 'Apple HomePod', 'Smart speaker with excellent sound quality and integration with Apple HomeKit for smart home control.', 299.99, 'O', 'dev', true, 'ecc4955b-36de-40de-855d-e221c4eab5ba', '2025-02-03 16:31:08.654297+00', '2025-02-03 16:31:08.654297+00', NULL);
-INSERT INTO public.products VALUES (1047, 'Fujifilm X100V', 'Compact digital camera with a 23mm lens, great for street photography and everyday moments.', 1399.99, 'O', 'dev', true, '8a0d40d9-d428-4705-bf3f-09e1f0f37835', '2025-02-03 16:31:08.654297+00', '2025-02-03 16:31:08.654297+00', NULL);
-INSERT INTO public.products VALUES (1048, 'Logitech G Pro X Wireless', 'Professional-grade wireless gaming headset with customizable sound and a noise-canceling microphone.', 199.99, 'O', 'dev', true, '8e9782fb-9089-4d90-8ae6-2a767c8593c9', '2025-02-03 16:31:08.654297+00', '2025-02-03 16:31:08.654297+00', NULL);
-INSERT INTO public.products VALUES (1049, 'Sonos One SL', 'Wireless speaker that offers rich sound and integrates seamlessly with your smart home system.', 179.99, 'O', 'dev', true, '8c94c8d1-f2c9-48ef-bff4-b835d3037aed', '2025-02-03 16:31:08.654297+00', '2025-02-03 16:31:08.654297+00', NULL);
-INSERT INTO public.products VALUES (1050, 'Huawei MateBook X Pro', 'Premium laptop featuring a 3K touch display, fast Intel processors, and a slim design.', 1599.99, 'O', 'dev', true, '175b480b-68bd-48d9-bb09-e68812657380', '2025-02-03 16:31:08.654297+00', '2025-02-03 16:31:08.654297+00', NULL);
-INSERT INTO public.products VALUES (1051, 'Sony A8H OLED TV', 'OLED TV with perfect black levels and stunning color accuracy, ideal for movie enthusiasts.', 1799.99, 'O', 'dev', true, '8284e31d-364c-4b9f-8d82-1dae5675ead9', '2025-02-03 16:31:08.654297+00', '2025-02-03 16:31:08.654297+00', NULL);
-INSERT INTO public.products VALUES (1052, 'Dell Alienware m15 R6', 'Gaming laptop with Intel Core i7, NVIDIA GeForce RTX graphics, and fast refresh rate display.', 1499.99, 'O', 'dev', true, 'b19dd238-3663-4729-bf96-847ea77f767f', '2025-02-03 16:31:08.654297+00', '2025-02-03 16:31:08.654297+00', NULL);
-INSERT INTO public.products VALUES (1053, 'Razer Kraken Ultimate', 'Gaming headset with immersive sound, customizable RGB lighting, and a noise-canceling microphone.', 129.99, 'O', 'dev', true, 'dc101d9c-780f-464c-bce2-ab38468909bd', '2025-02-03 16:31:08.654297+00', '2025-02-03 16:31:08.654297+00', NULL);
-INSERT INTO public.products VALUES (1054, 'ASUS ROG Strix G15', 'High-performance gaming laptop with AMD Ryzen 7, NVIDIA GeForce RTX graphics, and a 144Hz display.', 1499.99, 'O', 'dev', true, '55296fcb-dde7-4800-b4fc-9e9786786a0e', '2025-02-03 16:31:08.654297+00', '2025-02-03 16:31:08.654297+00', NULL);
-INSERT INTO public.products VALUES (1055, 'Apple iPad Air (5th Gen)', 'A powerful tablet featuring the M1 chip with support for the Apple Pencil and Smart Keyboard.', 599.99, 'O', 'dev', true, 'eeeaa967-6ef8-4284-b76b-73efd5ed8017', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1056, 'Sony Xperia 1 III', 'Flagship smartphone with a 6.5-inch 4K OLED display and advanced camera system for professional photography.', 1299.99, 'O', 'dev', true, '4b50fdf6-7851-4d8f-88d6-e28c5dfea7c8', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1057, 'Google Nest Thermostat', 'Smart thermostat that helps save energy and integrates with Google Home for voice control.', 129.99, 'O', 'dev', true, 'ff527c62-cc8c-42c1-b02c-12bb65e80af4', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1058, 'Bose Noise Cancelling Headphones 700', 'Wireless headphones with adjustable noise cancellation, great for travel and work.', 379.99, 'O', 'dev', true, '94e18c9f-8020-4823-a0f7-62021f3a6a88', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1059, 'HP Envy x360 13', '2-in-1 laptop with an Intel Core i7 processor, excellent battery life, and a vibrant display.', 999.99, 'O', 'dev', true, '33f75212-96cc-4934-9b7c-1627a813684b', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1060, 'Canon EOS Rebel T8i', 'Digital SLR camera with a 24.1 MP sensor and advanced autofocus for better clarity in photos.', 899.99, 'O', 'dev', true, 'a332afae-9fa5-4406-a8e4-43288d3b9d21', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1061, 'Samsung Galaxy Watch 5', 'Stylish smartwatch with health tracking, GPS, and a variety of fitness features.', 299.99, 'O', 'dev', true, '34cd7a76-c57a-4e0e-8bd4-79bd754c193d', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1062, 'Apple Mac mini M1', 'Compact desktop with the M1 chip, offering fast performance and excellent energy efficiency.', 699.99, 'O', 'dev', true, 'fa489ae8-d9d2-446f-9082-d0f1ad666188', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1063, 'NVIDIA Shield TV Pro', 'Streaming media player that also serves as a gaming console, with 4K HDR support and Google Assistant integration.', 199.99, 'O', 'dev', true, '4b0a622a-67a6-46d3-affb-8030f1a4fc5e', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1064, 'Sony WH-1000XM3', 'Industry-leading noise-canceling headphones, delivering superb audio and comfort for long listening sessions.', 349.99, 'O', 'dev', true, 'e73ac663-0052-4e97-9382-154d0513f592', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1065, 'Amazon Fire HD 10 Tablet', 'Affordable tablet with a 10.1-inch display, powerful processing, and Alexa integration for smart home control.', 149.99, 'O', 'dev', true, 'f6c01016-81e2-4d94-9595-bc4779fac3ba', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1066, 'Fitbit Versa 3', 'Fitness smartwatch with built-in GPS, heart rate monitoring, and over 6 days of battery life.', 229.99, 'O', 'dev', true, '804d6905-dc49-4859-8561-db4f999423f3', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1067, 'Razer Huntsman Mini', '60% mechanical gaming keyboard with Razer Optical switches and customizable RGB lighting.', 119.99, 'O', 'dev', true, 'aab06f85-fb20-4143-a1c2-65c3eb61e2fd', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1068, 'Dell UltraSharp U2720Q', '27-inch 4K USB-C monitor offering exceptional color accuracy for professional photographers and designers.', 499.99, 'O', 'dev', true, '7c4fcd18-865b-425e-bdf3-8e76fffc0ba5', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1069, 'Apple AirPods Max', 'High-fidelity over-ear headphones with active noise cancellation and spatial audio for immersive listening.', 549.99, 'O', 'dev', true, 'adcb7651-849e-4634-93e0-8c2584414eaa', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1070, 'JBL Flip 5', 'Portable waterproof Bluetooth speaker with deep bass and up to 12 hours of playtime.', 119.99, 'O', 'dev', true, '61a39a8e-1ccd-499e-99fd-69d91f10befc', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1071, 'Huawei P50 Pro', 'Flagship smartphone with a quad-camera system, 4G, and a stunning 6.6-inch OLED display.', 999.99, 'O', 'dev', true, 'eab2ddf9-b347-4cce-86e6-081346302428', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1072, 'Logitech MX Master 3', 'Wireless mouse with ergonomic design, programmable buttons, and multi-device connectivity.', 99.99, 'O', 'dev', true, '6a9de901-15cc-41a0-8db5-2c053c0d6be2', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1073, 'Acer Nitro 5', 'Gaming laptop with an Intel Core i7 processor, NVIDIA GeForce GTX 1650 graphics, and a 144Hz display.', 999.99, 'O', 'dev', true, 'ad2a9b16-de49-4fbc-b76a-c2e520bb2087', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1074, 'Samsung Galaxy Buds Pro', 'Wireless earbuds with active noise cancellation, clear sound, and long-lasting battery life.', 199.99, 'O', 'dev', true, 'c4646cbf-a19d-4370-8e05-9367017278d5', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1075, 'Xiaomi Mi 11 Ultra', 'Smartphone featuring a 6.81-inch AMOLED display, Snapdragon 888, and 50 MP main camera.', 749.99, 'O', 'dev', true, 'de6154fb-fab4-4be1-8a2f-492538d51807', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1076, 'Alienware Aurora Ryzen Edition', 'Gaming desktop featuring AMD Ryzen processors and powerful NVIDIA GeForce RTX graphics for immersive gaming.', 2299.99, 'O', 'dev', true, 'd4697a45-7034-4bf5-9b8c-46a4d6cf0042', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1077, 'Eufy Security 2K Camera', 'Smart security camera with 2K resolution, night vision, and two-way audio for home security.', 119.99, 'O', 'dev', true, 'e09b2366-48d7-4971-83ff-6b9e519ec668', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1078, 'Asus ZenBook 14', 'Compact and lightweight ultrabook with Intel Core i7, excellent battery life, and a 14-inch Full HD display.', 899.99, 'O', 'dev', true, '8238b6d3-78d3-4ecf-a15f-aded3c32e0bd', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1079, 'Samsung T7 Portable SSD', 'Fast external SSD with read speeds up to 1050 MB/s, providing high-speed storage in a compact design.', 89.99, 'O', 'dev', true, 'aa7d4101-c667-4276-a9d8-475c5f3b3a62', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1080, 'Garmin Forerunner 945', 'Multisport GPS watch with advanced metrics for running, cycling, and swimming with 2 weeks of battery life.', 599.99, 'O', 'dev', true, '12691802-43e3-49b3-8ab5-1a668c96b36b', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1081, 'Motorola Edge 20 Pro', 'Smartphone with a 108 MP camera, 6.7-inch OLED display, and fast 5G connectivity.', 799.99, 'O', 'dev', true, '74cc3e79-4918-4ade-8348-856ca4d2f66d', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1082, 'Lenovo Legion 5 Pro', 'Gaming laptop with AMD Ryzen 7, NVIDIA GeForce RTX 3070 graphics, and a 165Hz display for smooth gameplay.', 1599.99, 'O', 'dev', true, '3106b0d6-a240-4a0c-b76e-f62d3bb40ee6', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1083, 'Apple TV 4K (2021)', 'Streaming media player with Dolby Vision, HDR10+, and an A12 Bionic chip for high-performance streaming.', 179.99, 'O', 'dev', true, '8188ef5c-6da1-41f0-bf1b-39d3a7fb5745', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1084, 'Bose Soundbar 700', 'Premium soundbar with built-in Alexa and Google Assistant, providing immersive sound and clear dialogue.', 799.99, 'O', 'dev', true, '0644ff6a-4dd2-4451-9c97-92511b480d5e', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1085, 'Roku Ultra 2020', 'Streaming device offering 4K HDR, voice remote, and a powerful quad-core processor for fast streaming.', 99.99, 'O', 'dev', true, '64da5872-cb67-4efe-a994-599409da9bf2', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1086, 'Sony Bravia XR A80J OLED TV', 'OLED TV with 4K resolution, stunning picture quality, and advanced sound features.', 1799.99, 'O', 'dev', true, 'c00cb3b1-326d-4ac0-ba27-0dda4ab609e8', '2025-02-03 16:32:18.344706+00', '2025-02-03 16:32:18.344706+00', NULL);
-INSERT INTO public.products VALUES (1087, 'Apple iPhone 13 Mini', 'A compact and powerful iPhone with A15 Bionic chip, 5G, and excellent camera performance.', 699.99, 'O', 'dev', true, '8c536054-3cab-46c5-92f9-54255e4d0f23', '2025-02-03 16:33:14.852485+00', '2025-02-03 16:33:14.852485+00', NULL);
-INSERT INTO public.products VALUES (1088, 'Samsung Galaxy Tab S7', 'High-performance tablet with an 11-inch screen, 120Hz refresh rate, and a stylus included.', 649.99, 'O', 'dev', true, '793fd14e-5afc-4a34-af3e-a01879dc84b4', '2025-02-03 16:33:14.852485+00', '2025-02-03 16:33:14.852485+00', NULL);
-INSERT INTO public.products VALUES (1089, 'Logitech G Pro Wireless', 'Lightweight and ultra-precise wireless gaming mouse with customizable DPI settings.', 129.99, 'O', 'dev', true, 'd1474426-dc0c-4b65-9f8e-f1f06e32d1df', '2025-02-03 16:33:14.852485+00', '2025-02-03 16:33:14.852485+00', NULL);
-INSERT INTO public.products VALUES (1090, 'DJI Mavic Air 2', 'Compact drone with 4K camera and intelligent flight modes for smooth, cinematic shots.', 799.99, 'O', 'dev', true, 'd0fc45b1-66ec-4d7e-9feb-ebd52594b092', '2025-02-03 16:33:14.852485+00', '2025-02-03 16:33:14.852485+00', NULL);
-INSERT INTO public.products VALUES (1091, 'Sony WH-CH710N', 'Noise-canceling wireless headphones with up to 35 hours of battery life for immersive sound.', 199.99, 'O', 'dev', true, '75081e38-6d67-4fc3-afc8-717ca9644b20', '2025-02-03 16:33:14.852485+00', '2025-02-03 16:33:14.852485+00', NULL);
-INSERT INTO public.products VALUES (1092, 'Samsung 980 Pro SSD', 'Ultra-fast NVMe SSD for gaming and content creation, with read speeds up to 7000 MB/s.', 229.99, 'O', 'dev', true, '1a879fc4-85d0-4328-ab09-7114b8c7381b', '2025-02-03 16:33:14.852485+00', '2025-02-03 16:33:14.852485+00', NULL);
-INSERT INTO public.products VALUES (1093, 'Fujifilm X-S10', 'Compact mirrorless camera with in-body image stabilization and 4K video recording capabilities.', 999.99, 'O', 'dev', true, 'b173e1e4-ae25-49d2-a5a7-72ea08efd527', '2025-02-03 16:33:14.852485+00', '2025-02-03 16:33:14.852485+00', NULL);
-INSERT INTO public.products VALUES (1094, 'Microsoft Surface Book 3', 'High-end 2-in-1 laptop with a detachable screen, perfect for both work and play.', 1599.99, 'O', 'dev', true, '54f047f5-e3f7-4eee-8c80-7fe53b9ca210', '2025-02-03 16:33:14.852485+00', '2025-02-03 16:33:14.852485+00', NULL);
-INSERT INTO public.products VALUES (1095, 'Apple AirPods (3rd Gen)', 'True wireless earbuds with spatial audio, adaptive EQ, and longer battery life for great sound.', 179.99, 'O', 'dev', true, '45396275-0e82-4033-b4a8-cd8fbdff8378', '2025-02-03 16:33:14.852485+00', '2025-02-03 16:33:14.852485+00', NULL);
-INSERT INTO public.products VALUES (1096, 'Dell Inspiron 15', 'Budget-friendly laptop with an Intel Core i5 processor and 15.6-inch display, ideal for everyday use.', 499.99, 'O', 'dev', true, '31e080c4-1e90-406a-abbe-b2209e26144c', '2025-02-03 16:33:14.852485+00', '2025-02-03 16:33:14.852485+00', NULL);
-INSERT INTO public.products VALUES (1097, 'Google Nest Cam (Battery)', 'Smart security camera with 1080p HD video, night vision, and 24/7 streaming to keep your home secure.', 179.99, 'O', 'dev', true, '98d0e5e3-5374-4828-a794-2cc97917b901', '2025-02-03 16:33:14.852485+00', '2025-02-03 16:33:14.852485+00', NULL);
-INSERT INTO public.products VALUES (1098, 'Acer Predator X34', '34-inch ultrawide curved monitor with 3440x1440 resolution and a fast refresh rate for gaming.', 899.99, 'O', 'dev', true, 'd7c8d0d7-44d4-4140-a5a6-131acd2db7dc', '2025-02-03 16:33:14.852485+00', '2025-02-03 16:33:14.852485+00', NULL);
-INSERT INTO public.products VALUES (1099, 'OnePlus 9 Pro', 'Flagship smartphone with Snapdragon 888, 120Hz AMOLED display, and Hasselblad partnership for great photography.', 1069.99, 'O', 'dev', true, 'd5900c74-9252-4176-85ab-3a7e47d2ef54', '2025-02-03 16:33:14.852485+00', '2025-02-03 16:33:14.852485+00', NULL);
-INSERT INTO public.products VALUES (1100, 'HP Omen 15', 'Gaming laptop with Intel Core i7, NVIDIA GeForce RTX 3070, and 144Hz display for smooth gaming performance.', 1499.99, 'O', 'dev', true, 'cfbf28cb-5883-46cf-9c12-6e52fb95dfb1', '2025-02-03 16:33:14.852485+00', '2025-02-03 16:33:14.852485+00', NULL);
-INSERT INTO public.products VALUES (1101, 'Razer Blade Stealth 13', 'Ultraportable gaming laptop with Intel Core i7, NVIDIA GTX 1650 Ti, and a 120Hz display.', 1399.99, 'O', 'dev', true, 'f209ab6f-1964-4217-8565-c2243c9f1e07', '2025-02-03 16:33:14.852485+00', '2025-02-03 16:33:14.852485+00', NULL);
-INSERT INTO public.products VALUES (1102, 'Samsung T5 Portable SSD', 'Fast and compact external SSD with up to 500MB/s transfer speed and built-in security features.', 89.99, 'O', 'dev', true, '67e95f6a-999e-4a23-ac98-d1d032d6df17', '2025-02-03 16:33:14.852485+00', '2025-02-03 16:33:14.852485+00', NULL);
-INSERT INTO public.products VALUES (1103, 'Fitbit Charge 4', 'Fitness tracker with built-in GPS, heart rate monitoring, and sleep tracking to keep you on top of your health.', 149.99, 'O', 'dev', true, '467fec14-4796-49ee-bfad-3ca167203d96', '2025-02-03 16:33:14.852485+00', '2025-02-03 16:33:14.852485+00', NULL);
-INSERT INTO public.products VALUES (1104, 'Bose SoundLink Micro', 'Compact Bluetooth speaker with waterproof design and deep bass for outdoor adventures.', 99.99, 'O', 'dev', true, 'de78cc07-d5d8-40d3-9624-2e281881a81e', '2025-02-03 16:33:14.852485+00', '2025-02-03 16:33:14.852485+00', NULL);
-INSERT INTO public.products VALUES (1105, 'Apple MacBook Pro 13" M1', '13-inch MacBook Pro with Apple’s M1 chip for enhanced performance and long-lasting battery life.', 1299.99, 'O', 'dev', true, 'c93f7982-a370-43a7-8c02-94aa92dfa0da', '2025-02-03 16:33:14.852485+00', '2025-02-03 16:33:14.852485+00', NULL);
-INSERT INTO public.products VALUES (1106, 'Sony A7R IV', 'Full-frame mirrorless camera with 61 MP resolution and exceptional autofocus performance.', 2999.99, 'O', 'dev', true, '2ac83198-2de4-4f4e-a31a-a5fda0bb84fa', '2025-02-03 16:49:31.395363+00', '2025-02-03 16:49:31.395363+00', NULL);
-INSERT INTO public.products VALUES (1107, 'JBL Charge 4', 'Portable Bluetooth speaker with long battery life, waterproof design, and powerful sound.', 149.99, 'O', 'dev', true, '66733f08-f8b2-4bf5-90ec-0e6b49729886', '2025-02-03 16:49:31.395363+00', '2025-02-03 16:49:31.395363+00', NULL);
-INSERT INTO public.products VALUES (1108, 'Microsoft Surface Laptop 4', 'Sleek and powerful laptop with a 11th Gen Intel Core processor, ideal for productivity and entertainment.', 1399.99, 'O', 'dev', true, '7dbb8a16-a4ec-4000-af88-b3c580fe5b1d', '2025-02-03 16:49:31.395363+00', '2025-02-03 16:49:31.395363+00', NULL);
-INSERT INTO public.products VALUES (1109, 'Samsung Galaxy A52', 'Mid-range smartphone with a 120Hz Super AMOLED display, quad-camera setup, and long-lasting battery.', 399.99, 'O', 'dev', true, '515701ef-8704-4c42-817d-3224de09dda5', '2025-02-03 16:49:31.395363+00', '2025-02-03 16:49:31.395363+00', NULL);
-INSERT INTO public.products VALUES (1110, 'Bose Soundbar 500', 'Slim soundbar with Alexa and Google Assistant integration, offering high-quality audio for your TV.', 499.99, 'O', 'dev', true, 'c481e673-a14e-4d7f-88a2-2d0642700041', '2025-02-03 16:49:31.395363+00', '2025-02-03 16:49:31.395363+00', NULL);
-INSERT INTO public.products VALUES (1111, 'Apple Watch SE', 'Affordable smartwatch with fitness tracking, heart rate monitoring, and integration with the Apple ecosystem.', 279.99, 'O', 'dev', true, 'e084dd61-1020-40da-874e-26cc2b2ce5e5', '2025-02-03 16:49:31.395363+00', '2025-02-03 16:49:31.395363+00', NULL);
-INSERT INTO public.products VALUES (1112, 'Acer Predator Helios 300', 'Gaming laptop with an Intel i7, NVIDIA GeForce RTX 3060, and a 144Hz display for fluid gaming.', 1499.99, 'O', 'dev', true, '98c295f9-3a5f-4315-9f0f-7f51f575c2da', '2025-02-03 16:49:31.395363+00', '2025-02-03 16:49:31.395363+00', NULL);
-INSERT INTO public.products VALUES (1113, 'Canon EOS M50 Mark II', 'Compact mirrorless camera with 4K video recording and a powerful autofocus system for vlogging and photography.', 649.99, 'O', 'dev', true, 'ea1cb09e-481f-487e-8d41-c0c512ecf84d', '2025-02-03 16:49:31.395363+00', '2025-02-03 16:49:31.395363+00', NULL);
-INSERT INTO public.products VALUES (1114, 'Logitech G923', 'TrueForce racing wheel with force feedback technology for an immersive racing experience on PC and console.', 399.99, 'O', 'dev', true, 'dbe44a9e-e500-404c-846b-ae084f540f34', '2025-02-03 16:49:31.395363+00', '2025-02-03 16:49:31.395363+00', NULL);
-INSERT INTO public.products VALUES (1115, 'Samsung Galaxy S20 FE', 'Smartphone with a 120Hz AMOLED display, powerful Snapdragon 865, and versatile triple-camera system.', 699.99, 'O', 'dev', true, '758a89a9-241c-48ea-97d5-39bad1c0174d', '2025-02-03 16:49:31.395363+00', '2025-02-03 16:49:31.395363+00', NULL);
-INSERT INTO public.products VALUES (1116, 'Google Pixel 6a', 'Budget-friendly smartphone with a Google Tensor chip, excellent cameras, and a clean Android experience.', 449.99, 'O', 'dev', true, 'ca57a446-88c4-4af0-8ec6-515d95b6cc3c', '2025-02-03 16:49:31.395363+00', '2025-02-03 16:49:31.395363+00', NULL);
-INSERT INTO public.products VALUES (1117, 'Razer Nari Ultimate', 'Wireless gaming headset with haptic feedback, 7.1 surround sound, and a retractable microphone.', 199.99, 'O', 'dev', true, '2b3967dd-99d4-4943-8696-606b78e9d25e', '2025-02-03 16:49:31.395363+00', '2025-02-03 16:49:31.395363+00', NULL);
-INSERT INTO public.products VALUES (1118, 'DJI Pocket 2', 'Compact gimbal camera with 4K video and intelligent shooting modes for on-the-go vlogging and content creation.', 349.99, 'O', 'dev', true, '4689307f-33b6-481f-9896-8b8967f10df3', '2025-02-03 16:49:31.395363+00', '2025-02-03 16:49:31.395363+00', NULL);
-INSERT INTO public.products VALUES (1119, 'Apple iMac 24-inch M1', 'Colorful all-in-one desktop with Apple’s M1 chip, offering a powerful and efficient performance for creative tasks.', 1299.99, 'O', 'dev', true, '078a8291-65c9-4c08-bd98-3ab7fe662577', '2025-02-03 16:49:31.395363+00', '2025-02-03 16:49:31.395363+00', NULL);
-INSERT INTO public.products VALUES (1120, 'HP Spectre x360 13', 'Premium 2-in-1 laptop with Intel Core i7, 4K OLED display, and a long battery life for productivity and entertainment.', 1399.99, 'O', 'dev', true, 'ece40500-1494-4134-986a-f6fcd3beb9fc', '2025-02-03 16:49:31.395363+00', '2025-02-03 16:49:31.395363+00', NULL);
-INSERT INTO public.products VALUES (1121, 'Sony Bravia XR A90J OLED', 'OLED TV with perfect black levels, 4K resolution, and immersive sound, ideal for movie lovers and gamers.', 2499.99, 'O', 'dev', true, 'b363059b-cae1-4ce3-8d00-9f68978c1cef', '2025-02-03 16:49:31.395363+00', '2025-02-03 16:49:31.395363+00', NULL);
-INSERT INTO public.products VALUES (1122, 'Ecovacs Deebot Ozmo T8+', 'Robot vacuum and mop with smart navigation, powerful suction, and real-time monitoring through an app.', 499.99, 'O', 'dev', true, 'eb4bbd3b-dd97-400a-b150-1dbbcfef6251', '2025-02-03 16:49:31.395363+00', '2025-02-03 16:49:31.395363+00', NULL);
-INSERT INTO public.products VALUES (1123, 'Roku Streaming Stick 4K', 'Compact streaming device with 4K HDR support, voice remote, and easy access to popular streaming apps.', 49.99, 'O', 'dev', true, 'a95d369b-691f-4bc6-a87d-a81a5138faad', '2025-02-03 16:49:31.395363+00', '2025-02-03 16:49:31.395363+00', NULL);
-INSERT INTO public.products VALUES (1124, 'Samsung Galaxy Buds Live', 'True wireless earbuds with active noise cancellation, comfortable fit, and rich sound quality.', 169.99, 'O', 'dev', true, 'd04f866f-bdc5-41ae-ad76-df1e190cfd67', '2025-02-03 16:49:31.395363+00', '2025-02-03 16:49:31.395363+00', NULL);
-INSERT INTO public.products VALUES (1125, 'Apple Mac Pro', 'Powerful workstation with Intel Xeon processors, up to 1.5TB of memory, and exceptional graphics performance.', 5999.99, 'O', 'dev', true, '1420bbbc-8d6b-453e-9505-1fa8f04671cc', '2025-02-03 16:50:21.266372+00', '2025-02-03 16:50:21.266372+00', NULL);
-INSERT INTO public.products VALUES (1126, 'Samsung Odyssey G7', 'Curved 32-inch gaming monitor with QHD resolution, 240Hz refresh rate, and 1ms response time.', 749.99, 'O', 'dev', true, '1824a370-2eb8-4257-bb27-ce733eb3bd74', '2025-02-03 16:50:21.266372+00', '2025-02-03 16:50:21.266372+00', NULL);
-INSERT INTO public.products VALUES (1127, 'Bose SoundSport Free', 'True wireless earbuds with secure fit, great sound quality, and sweat and weather resistance.', 199.99, 'O', 'dev', true, '71c191a0-3511-4121-96c7-110ebff70dd8', '2025-02-03 16:50:21.266372+00', '2025-02-03 16:50:21.266372+00', NULL);
-INSERT INTO public.products VALUES (1128, 'Apple iPad Pro 11" (M1)', '11-inch tablet with the powerful M1 chip, offering amazing performance and compatibility with Apple Pencil.', 799.99, 'O', 'dev', true, '3921b4fc-2c1c-4a7f-9552-40c47a8e74e3', '2025-02-03 16:50:21.266372+00', '2025-02-03 16:50:21.266372+00', NULL);
-INSERT INTO public.products VALUES (1129, 'Alienware AW2521H', '24.5-inch gaming monitor with 360Hz refresh rate and NVIDIA G-SYNC for ultra-smooth gameplay.', 649.99, 'O', 'dev', true, 'de15c7c7-80f7-425a-a7ce-2366d3f74c2b', '2025-02-03 16:50:21.266372+00', '2025-02-03 16:50:21.266372+00', NULL);
-INSERT INTO public.products VALUES (1130, 'Sony Xperia 5 II', 'Smartphone with a 6.1-inch OLED display, Snapdragon 865, and professional-grade camera system.', 949.99, 'O', 'dev', true, 'ef1e5db1-c8bf-40c4-b074-cf49dc638e32', '2025-02-03 16:50:21.266372+00', '2025-02-03 16:50:21.266372+00', NULL);
-INSERT INTO public.products VALUES (1131, 'Fitbit Sense', 'Health smartwatch with ECG, stress tracking, heart rate monitoring, and built-in GPS for fitness enthusiasts.', 299.99, 'O', 'dev', true, '51c253a8-b505-43b9-a06b-6fd353507c36', '2025-02-03 16:50:21.266372+00', '2025-02-03 16:50:21.266372+00', NULL);
-INSERT INTO public.products VALUES (1132, 'Samsung 970 EVO NVMe SSD', 'High-performance internal SSD with fast read/write speeds up to 3500MB/s for faster load times and storage.', 139.99, 'O', 'dev', true, '62a6dd2c-052d-4b4c-89ca-511973c7d5c7', '2025-02-03 16:50:21.266372+00', '2025-02-03 16:50:21.266372+00', NULL);
-INSERT INTO public.products VALUES (1133, 'Razer DeathAdder V2', 'Ergonomic gaming mouse with optical sensor and customizable RGB lighting for precision and comfort.', 69.99, 'O', 'dev', true, '0e4aed7a-e82c-4d39-8487-e37a5f47466c', '2025-02-03 16:50:21.266372+00', '2025-02-03 16:50:21.266372+00', NULL);
-INSERT INTO public.products VALUES (1134, 'GoPro HERO 9 Black', 'Action camera with 5K video, 20MP photo, and HyperSmooth 3.0 stabilization for smooth shots in any conditions.', 399.99, 'O', 'dev', true, 'd56d9b19-2f43-4af5-8abe-afd1aff85aa9', '2025-02-03 16:50:21.266372+00', '2025-02-03 16:50:21.266372+00', NULL);
-INSERT INTO public.products VALUES (1135, 'Dell XPS 17', 'Premium laptop with Intel Core i7, NVIDIA GTX 1650 Ti graphics, and a 17-inch UHD+ display for creative professionals.', 1799.99, 'O', 'dev', true, '4c261db5-2af4-4346-8c80-952a8bfd245e', '2025-02-03 16:50:21.266372+00', '2025-02-03 16:50:21.266372+00', NULL);
-INSERT INTO public.products VALUES (1136, 'Apple AirPods Pro 2', 'Active noise-canceling wireless earbuds with improved sound quality, transparency mode, and spatial audio.', 249.99, 'O', 'dev', true, '1d5262e8-8882-4068-afbc-9e6f03380a82', '2025-02-03 16:50:21.266372+00', '2025-02-03 16:50:21.266372+00', NULL);
-INSERT INTO public.products VALUES (1137, 'Microsoft Surface Pro X', 'Slim and powerful 2-in-1 laptop with ARM-based processor and a high-resolution 13-inch display for productivity on-the-go.', 999.99, 'O', 'dev', true, '05677c74-482e-4bc7-b539-5174b8e39008', '2025-02-03 16:50:21.266372+00', '2025-02-03 16:50:21.266372+00', NULL);
-INSERT INTO public.products VALUES (1138, 'Asus ROG Strix Scar 17', 'Gaming laptop with Intel Core i9, NVIDIA GeForce RTX 3080, and 360Hz display for the ultimate gaming experience.', 2299.99, 'O', 'dev', true, '8c87a8ca-f1e7-453e-8ff2-e3ebedb52353', '2025-02-03 16:50:21.266372+00', '2025-02-03 16:50:21.266372+00', NULL);
-INSERT INTO public.products VALUES (1139, 'Sony A6400', 'Compact mirrorless camera with 4K video recording, fast autofocus, and great low-light performance.', 898.99, 'O', 'dev', true, '3161fce8-62ca-4b97-a994-07f3f481f296', '2025-02-03 16:50:21.266372+00', '2025-02-03 16:50:21.266372+00', NULL);
-INSERT INTO public.products VALUES (1140, 'Xiaomi Mi Band 6', 'Affordable fitness tracker with a large AMOLED display, heart rate monitoring, and up to 14 days of battery life.', 49.99, 'O', 'dev', true, 'd6978472-05e2-4c9e-bdfc-e424611ed990', '2025-02-03 16:50:21.266372+00', '2025-02-03 16:50:21.266372+00', NULL);
-INSERT INTO public.products VALUES (1141, 'Oculus Quest 2', 'Standalone VR headset with a wide library of VR games and experiences, offering high-resolution displays and easy setup.', 299.99, 'O', 'dev', true, '9f8b24e2-7fb1-4e39-bcbd-8c878e978c3e', '2025-02-03 16:50:21.266372+00', '2025-02-03 16:50:21.266372+00', NULL);
-INSERT INTO public.products VALUES (1142, 'Razer Blade 15 Advanced', 'Slim gaming laptop with Intel Core i7, NVIDIA RTX 3070, and 240Hz display for competitive gaming performance.', 1799.99, 'O', 'dev', true, 'c2864116-6c63-4404-9896-110ccf7328a6', '2025-02-03 16:50:21.266372+00', '2025-02-03 16:50:21.266372+00', NULL);
-INSERT INTO public.products VALUES (1143, 'JBL Pulse 4', 'Portable Bluetooth speaker with 360-degree sound, RGB light show, and up to 12 hours of playtime for parties on-the-go.', 249.99, 'O', 'dev', true, '641aa412-0923-4db8-b1b1-9111b17588af', '2025-02-03 16:50:21.266372+00', '2025-02-03 16:50:21.266372+00', NULL);
-INSERT INTO public.products VALUES (1144, 'HP Reverb G2 VR', 'Virtual reality headset with high resolution, accurate tracking, and immersive experiences for gaming and productivity.', 599.99, 'O', 'dev', true, '41046100-be11-4ffe-8283-f3d0496f8a78', '2025-02-03 16:50:21.266372+00', '2025-02-03 16:50:21.266372+00', NULL);
-
-SELECT pg_catalog.setval('public.products_id_seq', 1144, true);
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Smartphone',
+    'Latest model with high-definition camera and fast processor.',
+    799.99,
+    'Electronics'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Cotton T-Shirt',
+    'Soft and breathable cotton t-shirt available in multiple colors.',
+    19.99,
+    'Clothing'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Air Fryer',
+    'Healthy cooking appliance that fries food with little to no oil.',
+    129.99,
+    'Home Appliances'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Leather Sofa',
+    'Comfortable and stylish leather sofa, perfect for living rooms.',
+    899.99,
+    'Furniture'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Laptop',
+    'Portable and powerful laptop with 16GB RAM and 512GB SSD.',
+    1199.99,
+    'Electronics'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Bluetooth Headphones',
+    'Wireless headphones with noise cancellation and long battery life.',
+    159.99,
+    'Electronics'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Running Shoes',
+    'Lightweight and comfortable running shoes with great grip.',
+    79.99,
+    'Clothing'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Winter Jacket',
+    'Warm and insulated jacket for cold weather.',
+    89.99,
+    'Clothing'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Dishwasher',
+    'High-efficiency dishwasher with multiple wash cycles and a sleek design.',
+    499.99,
+    'Home Appliances'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Coffee Maker',
+    'Automatic coffee maker with programmable settings for your perfect brew.',
+    79.99,
+    'Home Appliances'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Dining Table',
+    'Modern wooden dining table with four matching chairs.',
+    299.99,
+    'Furniture'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Bookshelf',
+    'Elegant wooden bookshelf with adjustable shelves.',
+    149.99,
+    'Furniture'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Mystery Novel',
+    'A thrilling mystery novel with unexpected plot twists.',
+    12.99,
+    'Books'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Self-Help Book',
+    'Motivational book to help achieve your goals and overcome obstacles.',
+    15.99,
+    'Books'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Facial Cleanser',
+    'Gentle cleanser that removes dirt and impurities without drying out skin.',
+    19.99,
+    'Beauty & Personal Care'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Shampoo',
+    'Nourishing shampoo that promotes healthy hair growth and prevents dandruff.',
+    12.99,
+    'Beauty & Personal Care'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Soccer Ball',
+    'High-quality soccer ball, great for both practice and games.',
+    24.99,
+    'Sports & Outdoors'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Camping Tent',
+    'Waterproof tent with easy setup for outdoor adventures.',
+    129.99,
+    'Sports & Outdoors'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Action Figure',
+    'Detailed action figure from a popular animated series.',
+    14.99,
+    'Toys & Games'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Board Game',
+    'Exciting strategy board game for family fun.',
+    29.99,
+    'Toys & Games'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Car Seat Cover',
+    'Durable car seat cover to protect from spills and wear.',
+    49.99,
+    'Automotive'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'LED Headlights',
+    'Energy-efficient LED headlights for enhanced night driving visibility.',
+    89.99,
+    'Automotive'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Organic Green Tea',
+    'High-quality organic green tea that promotes relaxation.',
+    9.99,
+    'Food & Beverages'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Protein Powder',
+    'Plant-based protein powder to support muscle growth and recovery.',
+    29.99,
+    'Food & Beverages'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Multivitamin Supplements',
+    'Comprehensive daily multivitamin for overall health.',
+    19.99,
+    'Health & Wellness'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Yoga Block',
+    'Durable yoga block to assist with flexibility and balance in poses.',
+    12.99,
+    'Health & Wellness'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Electric Toothbrush',
+    'Rechargeable electric toothbrush for a thorough and gentle clean.',
+    49.99,
+    'Health & Wellness'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Ergonomic Chair',
+    'Ergonomic office chair designed for comfort and lumbar support.',
+    199.99,
+    'Furniture'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Standing Desk',
+    'Adjustable standing desk for a healthier work environment.',
+    299.99,
+    'Furniture'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Smart Watch',
+    'Fitness tracker with heart rate monitor and sleep tracking features.',
+    149.99,
+    'Electronics'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Air Conditioner',
+    'Portable air conditioner for fast and efficient cooling.',
+    299.99,
+    'Home Appliances'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Smart TV',
+    'Ultra HD Smart TV with built-in streaming apps and voice control.',
+    599.99,
+    'Electronics'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Gaming Console',
+    'Next-gen gaming console with fast load times and a library of games.',
+    499.99,
+    'Electronics'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Smartphone Case',
+    'Durable phone case to protect against drops and scratches.',
+    14.99,
+    'Electronics'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Laptop Sleeve',
+    'Protective laptop sleeve made with water-resistant material.',
+    29.99,
+    'Electronics'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Sweater',
+    'Cozy knitted sweater in multiple sizes and colors.',
+    39.99,
+    'Clothing'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Jeans',
+    'Classic denim jeans available in various fits and washes.',
+    49.99,
+    'Clothing'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Rain Boots',
+    'Waterproof rain boots to keep your feet dry on rainy days.',
+    39.99,
+    'Clothing'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Work Shirt',
+    'Button-down shirt with a sleek, professional look.',
+    29.99,
+    'Clothing'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Refrigerator',
+    'Energy-efficient refrigerator with adjustable shelves and freezer compartments.',
+    899.99,
+    'Home Appliances'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Vacuum Cleaner',
+    'High-performance vacuum cleaner with multiple cleaning modes and a HEPA filter.',
+    159.99,
+    'Home Appliances'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Microwave',
+    'Compact microwave with pre-programmed settings for quick meals.',
+    99.99,
+    'Home Appliances'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Toaster',
+    '2-slice toaster with adjustable browning control.',
+    29.99,
+    'Home Appliances'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Queen Bed Frame',
+    'Sturdy and elegant queen-size bed frame with a modern design.',
+    299.99,
+    'Furniture'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Recliner Chair',
+    'Comfortable recliner chair with adjustable positions for maximum relaxation.',
+    349.99,
+    'Furniture'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Coffee Table',
+    'Sleek and stylish coffee table made with high-quality wood and glass.',
+    149.99,
+    'Furniture'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Bar Stool',
+    'Adjustable bar stool with cushioned seat for maximum comfort.',
+    89.99,
+    'Furniture'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Romantic Novel',
+    'A heartwarming love story with an unexpected twist.',
+    9.99,
+    'Books'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Science Fiction Novel',
+    'A thrilling science fiction novel set in a dystopian future.',
+    14.99,
+    'Books'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Cookbook',
+    'A collection of recipes for healthy and delicious meals.',
+    19.99,
+    'Books'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Travel Guide',
+    'Comprehensive travel guide to popular destinations around the world.',
+    24.99,
+    'Books'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Body Lotion',
+    'Moisturizing body lotion with natural ingredients for soft, smooth skin.',
+    14.99,
+    'Beauty & Personal Care'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Perfume',
+    'Luxurious fragrance with notes of jasmine and vanilla.',
+    39.99,
+    'Beauty & Personal Care'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Lip Balm',
+    'Soothing lip balm to keep lips hydrated and soft.',
+    5.99,
+    'Beauty & Personal Care'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Nail Polish',
+    'Long-lasting nail polish available in a variety of shades.',
+    7.99,
+    'Beauty & Personal Care'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Tennis Racket',
+    'Professional-grade tennis racket with a lightweight frame.',
+    89.99,
+    'Sports & Outdoors'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Bicycle',
+    'Durable and lightweight bicycle for city commuting and exercise.',
+    299.99,
+    'Sports & Outdoors'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Hiking Backpack',
+    'Comfortable and spacious hiking backpack with adjustable straps.',
+    69.99,
+    'Sports & Outdoors'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Fishing Rod',
+    'High-quality fishing rod with a sensitive tip for better catch rate.',
+    49.99,
+    'Sports & Outdoors'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Electric Car Charger',
+    'Portable electric car charger with fast charging capabilities.',
+    129.99,
+    'Automotive'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Garage Storage System',
+    'Heavy-duty storage racks for organizing tools and equipment in the garage.',
+    199.99,
+    'Automotive'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Car Cleaning Kit',
+    'Complete cleaning kit with microfiber towels, wax, and cleaning solution.',
+    49.99,
+    'Automotive'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Portable Cooler',
+    'Insulated cooler with a large capacity for beverages and snacks.',
+    59.99,
+    'Food & Beverages'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Organic Granola',
+    'Crunchy and delicious organic granola made with oats, nuts, and dried fruits.',
+    8.99,
+    'Food & Beverages'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    '4K Ultra HD TV',
+    'Ultra HD TV with HDR support for an immersive viewing experience.',
+    799.99,
+    'Electronics'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Wireless Charging Pad',
+    'Fast wireless charger compatible with most smartphones.',
+    24.99,
+    'Electronics'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Gaming Headset',
+    'High-quality gaming headset with surround sound and microphone.',
+    69.99,
+    'Electronics'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'External Hard Drive',
+    'Portable external hard drive with 1TB of storage space.',
+    59.99,
+    'Electronics'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Windbreaker Jacket',
+    'Lightweight windbreaker jacket perfect for outdoor activities.',
+    39.99,
+    'Clothing'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Leather Belt',
+    'Stylish leather belt in black and brown, available in multiple sizes.',
+    29.99,
+    'Clothing'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Flannel Shirt',
+    'Comfortable flannel shirt with plaid pattern and soft fabric.',
+    34.99,
+    'Clothing'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Cargo Shorts',
+    'Casual cargo shorts with multiple pockets for convenience.',
+    24.99,
+    'Clothing'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Dish Soap',
+    'Gentle yet effective dish soap for cleaning dishes without harsh chemicals.',
+    4.99,
+    'Home Appliances'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Air Purifier',
+    'High-efficiency air purifier that removes dust, allergens, and odors.',
+    199.99,
+    'Home Appliances'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Slow Cooker',
+    'Programmable slow cooker perfect for stews, soups, and more.',
+    49.99,
+    'Home Appliances'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Blender',
+    'High-powered blender for smoothies, soups, and shakes.',
+    89.99,
+    'Home Appliances'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'King Size Bed',
+    'Spacious king-size bed with a sturdy wood frame and soft mattress.',
+    799.99,
+    'Furniture'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Dresser',
+    'Wooden dresser with five spacious drawers for clothing storage.',
+    299.99,
+    'Furniture'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Filing Cabinet',
+    'Metal filing cabinet with four drawers for office organization.',
+    159.99,
+    'Furniture'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Accent Chair',
+    'Stylish accent chair with comfortable padding and modern design.',
+    169.99,
+    'Furniture'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Cookbook for Beginners',
+    'A beginner-friendly cookbook with simple recipes for every meal.',
+    19.99,
+    'Books'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Fantasy Novel',
+    'A gripping fantasy novel set in an enchanted world full of magic and adventure.',
+    12.99,
+    'Books'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Biography',
+    'An inspiring biography of a famous entrepreneur who changed the tech industry.',
+    14.99,
+    'Books'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'History Book',
+    'A detailed history book about the rise and fall of ancient civilizations.',
+    18.99,
+    'Books'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Face Serum',
+    'Anti-aging face serum with vitamins and antioxidants for youthful skin.',
+    29.99,
+    'Beauty & Personal Care'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Hair Gel',
+    'Strong-hold hair gel for shaping and styling hair all day long.',
+    9.99,
+    'Beauty & Personal Care'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Makeup Brush Set',
+    'Professional makeup brush set for flawless application.',
+    39.99,
+    'Beauty & Personal Care'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Face Mask',
+    'Hydrating face mask for smooth and glowing skin.',
+    14.99,
+    'Beauty & Personal Care'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Baseball Bat',
+    'Durable baseball bat made of high-quality aluminum alloy.',
+    49.99,
+    'Sports & Outdoors'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Mountain Bike',
+    'Heavy-duty mountain bike with shock absorbers and wide tires.',
+    399.99,
+    'Sports & Outdoors'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Tennis Shoes',
+    'Comfortable and supportive tennis shoes for better court performance.',
+    59.99,
+    'Sports & Outdoors'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Golf Clubs',
+    'Complete set of golf clubs for beginners and enthusiasts alike.',
+    499.99,
+    'Sports & Outdoors'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Car Wax',
+    'Protective car wax that shines and shields the car from dirt and water.',
+    19.99,
+    'Automotive'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Car Tire Inflator',
+    'Portable car tire inflator with automatic shutoff feature for convenience.',
+    39.99,
+    'Automotive'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Battery Charger',
+    'Compact battery charger for quick recharging of car batteries.',
+    24.99,
+    'Automotive'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Fuel Additive',
+    'Fuel system cleaner to improve engine performance and fuel efficiency.',
+    14.99,
+    'Automotive'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Soda Stream',
+    'Carbonated drink maker for fresh homemade sodas and sparkling water.',
+    99.99,
+    'Food & Beverages'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Gourmet Coffee Beans',
+    'Premium quality coffee beans roasted to perfection for a bold flavor.',
+    19.99,
+    'Food & Beverages'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Gluten-Free Snacks',
+    'A variety of gluten-free snacks that are delicious and healthy.',
+    6.99,
+    'Food & Beverages'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Organic Honey',
+    'Pure and natural organic honey sourced from local farms.',
+    12.99,
+    'Food & Beverages'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Weight Loss Supplement',
+    'Natural supplement to support healthy metabolism and weight loss.',
+    29.99,
+    'Health & Wellness'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Yoga Mat Cleaner',
+    'Antibacterial cleaner to keep your yoga mat fresh and clean.',
+    9.99,
+    'Health & Wellness'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Fitness Tracker',
+    'Monitor your activity, sleep, and heart rate with this sleek fitness tracker.',
+    49.99,
+    'Health & Wellness'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Resistance Bands',
+    'Set of durable resistance bands for strength training and flexibility.',
+    19.99,
+    'Health & Wellness'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Smartphone Stand',
+    'Adjustable stand for your smartphone for hands-free use.',
+    12.99,
+    'Electronics'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Portable Speaker',
+    'Wireless Bluetooth speaker with powerful sound and long battery life.',
+    49.99,
+    'Electronics'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Smart Home Hub',
+    'Central control for all your smart home devices, compatible with Alexa and Google Assistant.',
+    99.99,
+    'Electronics'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Laptop Stand',
+    'Ergonomic laptop stand that improves posture and reduces neck strain.',
+    29.99,
+    'Electronics'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Sweatpants',
+    'Comfy sweatpants for lounging or casual wear, available in multiple colors.',
+    24.99,
+    'Clothing'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Winter Boots',
+    'Insulated winter boots with non-slip soles for cold weather conditions.',
+    79.99,
+    'Clothing'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Dress Shirt',
+    'Classic dress shirt made from breathable cotton for a sharp, professional look.',
+    39.99,
+    'Clothing'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Baseball Cap',
+    'Adjustable cotton baseball cap with logo and breathable panels.',
+    19.99,
+    'Clothing'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Deep Fryer',
+    'Electric deep fryer for cooking crispy foods with temperature control.',
+    59.99,
+    'Home Appliances'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Dehumidifier',
+    'Compact dehumidifier for eliminating excess moisture and preventing mold.',
+    79.99,
+    'Home Appliances'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Ice Cream Maker',
+    'Homemade ice cream maker for making delicious ice cream with your favorite ingredients.',
+    49.99,
+    'Home Appliances'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Induction Cooktop',
+    'Portable induction cooktop for fast and efficient cooking with safety features.',
+    99.99,
+    'Home Appliances'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Loveseat Sofa',
+    'Cozy two-seat loveseat with a modern design and soft cushions.',
+    499.99,
+    'Furniture'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Ottoman',
+    'Versatile ottoman for extra seating or storage in your living room.',
+    129.99,
+    'Furniture'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Bunk Bed',
+    'Sturdy and space-saving bunk bed with ladder and safety rails.',
+    299.99,
+    'Furniture'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Patio Chair',
+    'Weather-resistant patio chair with cushioned seat and armrests for outdoor comfort.',
+    89.99,
+    'Furniture'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Cookbook for Vegans',
+    'A vegan-friendly cookbook filled with delicious plant-based recipes.',
+    18.99,
+    'Books'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Autobiography',
+    'Autobiography of a famous historical figure, filled with insights and life lessons.',
+    22.99,
+    'Books'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Poetry Collection',
+    'A collection of beautiful poems exploring love, nature, and life.',
+    14.99,
+    'Books'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Thriller Novel',
+    'A gripping thriller that will keep you on the edge of your seat till the last page.',
+    16.99,
+    'Books'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Shaving Cream',
+    'Rich and moisturizing shaving cream for a smooth and comfortable shave.',
+    8.99,
+    'Beauty & Personal Care'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Eyeliner',
+    'Waterproof eyeliner for creating bold and defined eye looks.',
+    7.99,
+    'Beauty & Personal Care'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Hair Conditioner',
+    'Hydrating conditioner that restores moisture and adds shine to hair.',
+    10.99,
+    'Beauty & Personal Care'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Makeup Remover',
+    'Gentle makeup remover wipes that clean and refresh the skin.',
+    5.99,
+    'Beauty & Personal Care'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Basketball',
+    'High-quality basketball designed for both indoor and outdoor play.',
+    19.99,
+    'Sports & Outdoors'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Tennis Balls',
+    'Set of durable tennis balls suitable for training or matches.',
+    12.99,
+    'Sports & Outdoors'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Yoga Mat',
+    'Non-slip yoga mat made of eco-friendly materials for ultimate comfort.',
+    24.99,
+    'Sports & Outdoors'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Football',
+    'Official-size football made with durable leather for long-lasting play.',
+    29.99,
+    'Sports & Outdoors'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Car Sunshade',
+    'Protect your car interior from the sun with this foldable sunshade.',
+    14.99,
+    'Automotive'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Floor Mats',
+    'Set of all-weather car floor mats to protect against dirt and moisture.',
+    24.99,
+    'Automotive'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Windshield Washer Fluid',
+    'High-quality washer fluid for clearing dirt, grime, and insects off your windshield.',
+    5.99,
+    'Automotive'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Jump Starter',
+    'Portable jump starter for emergencies and quick vehicle startups.',
+    59.99,
+    'Automotive'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Protein Bars',
+    'Healthy protein bars packed with nutrients and great taste.',
+    19.99,
+    'Food & Beverages'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Bottled Water',
+    'Pure and refreshing bottled water with balanced minerals for hydration.',
+    3.99,
+    'Food & Beverages'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Pasta Sauce',
+    'Savory and rich pasta sauce made with fresh tomatoes and spices.',
+    6.99,
+    'Food & Beverages'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Cereal',
+    'Crunchy and nutritious cereal made with whole grains and low sugar.',
+    4.99,
+    'Food & Beverages'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Whey Protein',
+    'High-quality whey protein to support muscle recovery and growth.',
+    34.99,
+    'Health & Wellness'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Probiotic Supplement',
+    'Probiotic supplement for digestive health and immune support.',
+    19.99,
+    'Health & Wellness'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Massage Gun',
+    'High-intensity massage gun for relieving muscle tension and soreness.',
+    89.99,
+    'Health & Wellness'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Compression Socks',
+    'Comfortable compression socks that improve circulation and reduce swelling.',
+    12.99,
+    'Health & Wellness'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Exercise Ball',
+    'Sturdy exercise ball for yoga, pilates, and core strength training.',
+    19.99,
+    'Health & Wellness'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Balance Board',
+    'Stability board designed to improve balance and coordination.',
+    39.99,
+    'Health & Wellness'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Acupressure Mat',
+    'Relieves tension and promotes relaxation with acupressure therapy.',
+    29.99,
+    'Health & Wellness'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Herbal Tea',
+    'Relaxing herbal tea made with natural ingredients like chamomile and mint.',
+    7.99,
+    'Food & Beverages'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Granola Bars',
+    'Delicious and nutritious granola bars made with oats, nuts, and fruits.',
+    8.99,
+    'Food & Beverages'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Fruit Juice',
+    '100% natural fruit juice with no added sugar, made from fresh fruits.',
+    4.99,
+    'Food & Beverages'
+  );
+INSERT INTO products (name, description, price, category)
+VALUES (
+    'Smart Water Bottle',
+    'A smart water bottle that tracks hydration levels and reminds you to drink water.',
+    34.99,
+    'Health & Wellness'
+  );

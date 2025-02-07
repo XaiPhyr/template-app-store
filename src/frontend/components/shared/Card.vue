@@ -59,13 +59,7 @@
             @click="wishList(item)"
             class="border border-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 hover:text-white rounded px-3 py-1 flex justify-center items-center"
           >
-            <HeartIcon size="14" class=""></HeartIcon>
-          </button>
-          <button
-            @click="addToCart(item)"
-            class="border border-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 hover:text-white rounded px-3 py-1 flex justify-center items-center"
-          >
-            <BarChartIcon size="14" class=""></BarChartIcon>
+            <i class="pi pi-heart"></i>
           </button>
         </div>
       </div>
@@ -105,13 +99,7 @@
               @click="wishList(item)"
               class="border border-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 hover:text-white rounded px-3 py-1 flex justify-center items-center"
             >
-              <HeartIcon size="14" class=""></HeartIcon>
-            </button>
-            <button
-              @click="addToCart(item)"
-              class="border border-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 hover:text-white rounded px-3 py-1 flex justify-center items-center"
-            >
-              <BarChartIcon size="14" class=""></BarChartIcon>
+              <i class="pi pi-heart"></i>
             </button>
           </div>
         </div>
