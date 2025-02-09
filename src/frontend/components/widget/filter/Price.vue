@@ -8,6 +8,8 @@
     },
   });
 
+  const isShowingContent = ref(true);
+
   const adjustedPriceRange: any = ref([]);
 
   const priceRange: any = computed({
@@ -36,13 +38,21 @@
 
 <template>
   <div class="">
-    <div class="p-2 flex gap-4 justify-center border-b">
+    <div class="p-2 flex gap-4 justify-center">
       <div class="font-bold text-center">Price Range</div>
-      <i class="pi pi-angle-down content-center" />
-      <i class="pi pi-angle-up content-center" />
+      <i
+        v-if="!isShowingContent"
+        @click="isShowingContent = !isShowingContent"
+        class="pi pi-angle-down content-center hover:cursor-pointer active:scale-110"
+      />
+      <i
+        v-else
+        @click="isShowingContent = !isShowingContent"
+        class="pi pi-angle-up content-center hover:cursor-pointer active:scale-110"
+      />
     </div>
 
-    <div class="">
+    <div :class="`border-t ${isShowingContent ? '' : 'hidden'}`">
       <div class="pt-5 px-5">
         <Slider
           @slideend="emits('selectedPriceRange', $event)"

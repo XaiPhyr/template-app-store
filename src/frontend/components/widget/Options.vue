@@ -3,6 +3,8 @@
 
   const rowSize = ref(10);
 
+  const isShowingContent = ref(true);
+
   const selectRowSize = () => {
     emits('selectedRowSize', rowSize.value);
   };
@@ -14,11 +16,21 @@
 
 <template>
   <div class="border w-64">
-    <div class="p-2">
+    <div class="p-2 flex gap-4 justify-center">
       <div class="font-bold text-center">Options</div>
+      <i
+        v-if="!isShowingContent"
+        @click="isShowingContent = !isShowingContent"
+        class="pi pi-angle-down content-center hover:cursor-pointer active:scale-110"
+      />
+      <i
+        v-else
+        @click="isShowingContent = !isShowingContent"
+        class="pi pi-angle-up content-center hover:cursor-pointer active:scale-110"
+      />
     </div>
 
-    <div class="border-t">
+    <div :class="`border-t ${isShowingContent ? '' : 'hidden'}`">
       <div class="p-5">
         <div class="grid grid-cols-3 gap-4 mb-4">
           <div class="content-center">Rows:</div>

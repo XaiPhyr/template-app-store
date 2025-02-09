@@ -74,6 +74,11 @@
     try {
       const { data } = await initApi(params);
 
+      if (!data) {
+        productsTotalSize.value = 1;
+        productsTotalPage.value = 1;
+      }
+
       if (data) {
         const { results, min_price, max_price, total } = data;
         if (!results) {

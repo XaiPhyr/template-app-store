@@ -8,15 +8,27 @@
   const modelSortByName = defineModel('sortByName');
   const modelSortByPrice = defineModel('sortByPrice');
   const modelSortByDate = defineModel('sortByDate');
+
+  const isShowingContent = ref(true);
 </script>
 
 <template>
   <div class="">
-    <div class="p-2">
+    <div class="p-2 flex gap-4 justify-center">
       <div class="font-bold text-center">Sort By</div>
+      <i
+        v-if="!isShowingContent"
+        @click="isShowingContent = !isShowingContent"
+        class="pi pi-angle-down content-center hover:cursor-pointer active:scale-110"
+      />
+      <i
+        v-else
+        @click="isShowingContent = !isShowingContent"
+        class="pi pi-angle-up content-center hover:cursor-pointer active:scale-110"
+      />
     </div>
 
-    <div class="border-t">
+    <div :class="`border-t ${isShowingContent ? '' : 'hidden'}`">
       <div class="p-5">
         <div class="mb-4">
           <div class="grid grid-cols-4 gap-4">

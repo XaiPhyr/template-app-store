@@ -49,11 +49,17 @@ func (m *Product) ReadAllProducts(limit, offset int, keyword, qExt string, sortB
 	cols := []string{
 		"name",
 		"description",
+		"price",
 	}
 
 	var columns []string
 	for _, col := range cols {
 		coalesce := "coalesce(" + col + ",'')"
+
+		if col == "price" {
+			coalesce = "coalesce(" + col + ",0)"
+		}
+
 		columns = append(columns, coalesce)
 	}
 

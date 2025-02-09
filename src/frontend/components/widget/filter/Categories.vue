@@ -3,6 +3,8 @@
 
   const route = useRoute();
 
+  const isShowingContent = ref(true);
+
   const categories = ref([]);
   const categoriesSize = ref(5);
   const categoriesTotal = ref(0);
@@ -78,11 +80,21 @@
 
 <template>
   <div class="">
-    <div class="p-2">
+    <div class="p-2 flex gap-4 justify-center">
       <div class="font-bold text-center">Categories</div>
+      <i
+        v-if="!isShowingContent"
+        @click="isShowingContent = !isShowingContent"
+        class="pi pi-angle-down content-center hover:cursor-pointer active:scale-110"
+      />
+      <i
+        v-else
+        @click="isShowingContent = !isShowingContent"
+        class="pi pi-angle-up content-center hover:cursor-pointer active:scale-110"
+      />
     </div>
 
-    <div class="border-t">
+    <div :class="`border-t ${isShowingContent ? '' : 'hidden'}`">
       <div class="" v-for="({ name }, index) in categories" :key="index">
         <div class="p-1">
           <div
