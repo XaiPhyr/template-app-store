@@ -117,12 +117,7 @@ func (m *Category) applyFilter(q *bun.SelectQuery, qExt string) *bun.SelectQuery
 		key := splitQExt[0]
 		value := splitQExt[1]
 
-		if key == "price" {
-			splitValue := strings.Split(value, "-")
-			q = q.Where("price >= ?", splitValue[0]).Where("price <= ?", splitValue[1])
-		} else {
-			q = q.Where(fmt.Sprintf("%s = %s", key, value))
-		}
+		q = q.Where(key+" = ?", value)
 	}
 
 	return q

@@ -22,6 +22,9 @@
   const modelSortByPrice = defineModel('sortByPrice');
   const modelSortByDate = defineModel('sortByDate');
 
+  const modelDateFrom = defineModel('dateFrom');
+  const modelDateTo = defineModel('dateTo');
+
   const emits = defineEmits([
     'selectedCategory',
     'selectedPriceRange',
@@ -33,7 +36,7 @@
 </script>
 
 <template>
-  <div class="border w-64">
+  <div class="border w-80">
     <WidgetFilterCategories
       v-if="props.filter === 'categories'"
       @selected-category="(v) => emits('selectedCategory', v)"
@@ -46,13 +49,19 @@
     />
 
     <WidgetFilterSort
+      v-if="props.filter === 'sort'"
       v-model:sort-by-name="modelSortByName"
       v-model:sort-by-price="modelSortByPrice"
       v-model:sort-by-date="modelSortByDate"
       @selected-sort-by-name="emits('selectedSortByName')"
       @selected-sort-by-price="emits('selectedSortByPrice')"
       @selected-sort-by-date="emits('selectedSortByDate')"
-      v-if="props.filter === 'sort'"
+    />
+
+    <WidgetFilterDate
+      v-if="props.filter === 'date'"
+      v-model:date-from="modelDateFrom"
+      v-model:date-to="modelDateTo"
     />
   </div>
 </template>

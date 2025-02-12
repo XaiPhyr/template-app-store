@@ -154,7 +154,7 @@ func (m *Product) applyFilter(q *bun.SelectQuery, qExt string) *bun.SelectQuery 
 			splitValue := strings.Split(value, ",")
 			q = q.Where("category IN (?)", bun.In(splitValue))
 		} else {
-			q = q.Where(fmt.Sprintf("%s = %s", key, value))
+			q = q.Where(key+" = ?", value)
 		}
 	}
 

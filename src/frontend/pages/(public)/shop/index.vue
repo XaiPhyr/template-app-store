@@ -1,12 +1,12 @@
 <script setup lang="ts">
   import type { SliderSlideEndEvent } from 'primevue';
-  import { readCategories } from '~/composables/api/categories';
-  import initApi from '~/api/instance';
+  import { readProducts } from '~/composables/api/products';
 
   useHead({
     title: 'Shop',
   });
 
+  const route = useRoute();
   const router = useRouter();
 
   const display = ref('grid');
@@ -27,31 +27,40 @@
   const sortByPrice = ref('');
   const sortByDate = ref('');
 
+  const dateFrom = ref('');
+  const dateTo = ref('');
+
   const selectedCategory: Ref<string, number> | any = ref('');
 
   onMounted(() => {
+    const { category }: any = route.query;
+
+    if (category) {
+      selectedCategory.value = category;
+    }
+
     loadProducts();
   });
 
   const loadProducts = async () => {
     products.value = [];
     isLoading.value = true;
+
     const params: any = {
-      url: '/products',
-      method: 'read',
-      params: { page: productsPage.value, size: productsSize.value },
+      page: productsPage.value,
+      size: productsSize.value,
     };
 
     if (keyword.value !== '') {
-      params.params.q = keyword.value;
+      params.q = keyword.value;
     }
 
     if (adjustedPriceRange.value) {
-      params.params.qExt = `price=${adjustedPriceRange.value}`;
+      params.qExt = `price=${adjustedPriceRange.value}`;
     }
 
-    if (selectedCategory.value.length > 0) {
-      params.params.qExt = `category=${selectedCategory.value}`;
+    if (selectedCategory.value) {
+      params.qExt = `category=${selectedCategory.value}`;
     }
 
     const sortItems = [];
@@ -68,41 +77,37 @@
     }
 
     if (sortItems.length > 0) {
-      params.params.sort = sortItems.join(',');
+      params.sort = sortItems.join(',');
     }
 
-    try {
-      const { data } = await initApi(params);
+    const data = await readProducts(params);
 
-      if (!data) {
-        productsTotalSize.value = 1;
-        productsTotalPage.value = 1;
-      }
-
-      if (data) {
-        const { results, min_price, max_price, total } = data;
-        if (!results) {
-          isLoading.value = false;
-          return;
-        }
-
-        if (results) {
-          products.value = results;
-        }
-
-        if (priceRange.value.length === 0) {
-          priceRange.value = [min_price, max_price];
-        }
-
-        originalPriceRange.value = [min_price, max_price];
-        productsTotalSize.value = total;
-        productsTotalPage.value = Math.ceil(total / productsSize.value);
-      }
-
-      isLoading.value = false;
-    } catch (error) {
-      isLoading.value = false;
+    if (!data) {
+      productsTotalSize.value = 1;
+      productsTotalPage.value = 1;
     }
+
+    if (data) {
+      const { results, min_price, max_price, total } = data;
+      if (!results) {
+        isLoading.value = false;
+        return;
+      }
+
+      if (results) {
+        products.value = results;
+      }
+
+      if (priceRange.value.length === 0) {
+        priceRange.value = [min_price, max_price];
+      }
+
+      originalPriceRange.value = [min_price, max_price];
+      productsTotalSize.value = total;
+      productsTotalPage.value = Math.ceil(total / productsSize.value);
+    }
+
+    isLoading.value = false;
   };
 
   const onSelectCategory = (item: any) => {
@@ -163,6 +168,9 @@
 
     selectedCategory.value = '';
 
+    dateFrom.value = '';
+    dateTo.value = '';
+
     loadProducts();
   };
 </script>
@@ -200,6 +208,13 @@
             filter="price"
             @selected-price-range="(v) => onSelectPiceRange(v)"
             :price-range="priceRange"
+          />
+
+          <WidgetFilter
+            class="mb-4"
+            filter="date"
+            v-model:date-from="dateFrom"
+            v-model:date-to="dateTo"
           />
 
           <button

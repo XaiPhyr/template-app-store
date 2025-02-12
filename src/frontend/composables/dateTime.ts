@@ -12,7 +12,7 @@ const formatDateTime = (
   return dayjs(date).format(format);
 };
 
-const unixDateTime = (date: string | number | Date) => {
+const unixDateTime = (date: string | number | Date | any) => {
   if (!date) {
     return '';
   }

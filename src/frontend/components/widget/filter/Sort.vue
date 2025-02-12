@@ -40,6 +40,7 @@
                 placeholder="Sort by Name"
                 class="block appearance-none w-full bg-white border p-2 px-3 leading-tight focus:outline-none focus:ring-2 focus:ring-indigo-500"
               >
+                <option class="" value="">N/A</option>
                 <option class="" value="name">Name (A-Z)</option>
                 <option class="" value="-name">Name (Z-A)</option>
               </select>
@@ -56,6 +57,7 @@
                 placeholder="Sort by Price"
                 class="block appearance-none w-full bg-white border p-2 px-3 leading-tight focus:outline-none focus:ring-2 focus:ring-indigo-500"
               >
+                <option class="" value="">N/A</option>
                 <option class="" value="created_at">Earliest</option>
                 <option class="" value="-created_at">Recently</option>
               </select>
@@ -72,6 +74,7 @@
                 placeholder="Sort by Price"
                 class="block appearance-none w-full bg-white border p-2 px-3 leading-tight focus:outline-none focus:ring-2 focus:ring-indigo-500"
               >
+                <option class="" value="">N/A</option>
                 <option class="" value="price">Low to High</option>
                 <option class="" value="-price">High to Low</option>
               </select>

@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="w-64">
+  <div class="w-80">
     <div class="border mb-4">
       <div class="p-2">
         <div class="font-bold text-center">Total</div>

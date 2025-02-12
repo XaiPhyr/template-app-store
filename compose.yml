@@ -16,7 +16,7 @@ services:
     stdin_open: true
     tty: true
     ports:
-      - "8200:8200"
+      - "8290:8200"
     build:
       context: ./src/backend
       dockerfile: Dockerfile.dev

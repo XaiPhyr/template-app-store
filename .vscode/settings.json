@@ -1,14 +1,3 @@
 {
-  "sqltools.connections": [
-    {
-      "previewLimit": 50,
-      "server": "localhost",
-      "port": 5435,
-      "driver": "PostgreSQL",
-      "database": "app_store_db",
-      "username": "rdev",
-      "name": "App Store",
-      "password": "FJV7f8IBjU8fuGnF56uUuy1euAfAvCWDh2al"
-    }
-  ]
+  "sqltools.connections": []
 }

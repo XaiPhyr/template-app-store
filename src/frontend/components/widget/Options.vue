@@ -15,7 +15,7 @@
 </script>
 
 <template>
-  <div class="border w-64">
+  <div class="border w-80">
     <div class="p-2 flex gap-4 justify-center">
       <div class="font-bold text-center">Options</div>
       <i

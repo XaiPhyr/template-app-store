@@ -21,6 +21,11 @@ const config = defineNuxtConfig({
       },
     },
   },
+  routeRules: {
+    '/': {
+      redirect: '/shop',
+    },
+  },
   runtimeConfig: {
     apiKey: '',
     public: {

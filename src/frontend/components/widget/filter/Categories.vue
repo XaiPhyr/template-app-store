@@ -17,15 +17,19 @@
   const emits = defineEmits(['selectedCategory']);
 
   const loadCategories = async () => {
-    const { total, results } = await readCategories({
+    const res = await readCategories({
       size: categoriesSize.value,
+      sort: 'id',
     });
 
-    categories.value = results;
-    categoriesTotal.value = total;
+    if (res) {
+      const { total, results } = res;
+      categories.value = results;
+      categoriesTotal.value = total;
 
-    const { category }: any = route.query;
-    categoriesSelected.value = category ? category.split(',') : [];
+      const { category }: any = route.query;
+      categoriesSelected.value = category ? category.split(',') : [];
+    }
   };
 
   const selectCategory = (item: string | number) => {
