@@ -29,8 +29,6 @@ services:
           target: /app/src/backend/
     env_file:
       - ./secrets/backend/.env
-    environment:
-      DATABASE_URL: postgres://rdev:FJV7f8IBjU8fuGnF56uUuy1euAfAvCWDh2al@app_store_db:5432/app_store_db?sslmode=disable
 
 volumes:
   api_volumes:
