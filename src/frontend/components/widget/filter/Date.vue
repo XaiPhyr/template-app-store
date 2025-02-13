@@ -6,6 +6,26 @@
   const modelDateTo = defineModel('dateTo');
 
   watch(
+    () => modelDateFrom.value,
+    (value) => {
+      const unixFrom = unixDateTime(value);
+      const unixTo = unixDateTime(modelDateTo.value);
+
+      const el = dateToRef.value.classList;
+      if (modelDateTo.value && dateToRef.value) {
+        if (unixFrom <= unixTo) {
+          el.remove('border-red-500');
+          el.remove('text-red-500');
+          return;
+        }
+
+        el.add('border-red-500');
+        el.add('text-red-500');
+      }
+    }
+  );
+
+  watch(
     () => modelDateTo.value,
     (value) => {
       const unixFrom = unixDateTime(modelDateFrom.value);
@@ -29,7 +49,7 @@
 <template>
   <div class="">
     <div class="p-2 flex gap-4 justify-center">
-      <div class="font-bold text-center">Date Range</div>
+      <div class="font-bold text-center">Posted Date</div>
       <i
         v-if="!isShowingContent"
         @click="isShowingContent = !isShowingContent"

@@ -1,6 +1,6 @@
 const formatCurrencies = (payload: number) => {
   if (!payload) {
-    return '';
+    return '0.00';
   }
 
   const obj: any = {

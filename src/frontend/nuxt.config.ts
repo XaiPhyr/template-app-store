@@ -10,7 +10,7 @@ const config = defineNuxtConfig({
     },
   },
   css: ['./assets/css/global.css'],
-  modules: ['@primevue/nuxt-module', '@nuxtjs/tailwindcss'],
+  modules: ['@primevue/nuxt-module', '@nuxtjs/tailwindcss', '@pinia/nuxt'],
   primevue: {
     options: {
       theme: {
@@ -20,6 +20,9 @@ const config = defineNuxtConfig({
         },
       },
     },
+  },
+  pinia: {
+    storesDirs: ['./store/**'],
   },
   routeRules: {
     '/': {

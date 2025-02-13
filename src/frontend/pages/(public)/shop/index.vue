@@ -55,12 +55,21 @@
       params.q = keyword.value;
     }
 
+    const qExtItems = [];
     if (adjustedPriceRange.value) {
-      params.qExt = `price=${adjustedPriceRange.value}`;
+      qExtItems.push(`price=${adjustedPriceRange.value}`);
     }
 
     if (selectedCategory.value) {
-      params.qExt = `category=${selectedCategory.value}`;
+      qExtItems.push(`category=${selectedCategory.value}`);
+    }
+
+    if (dateFrom.value && dateTo.value) {
+      qExtItems.push(`created_at=${dateFrom.value}|${dateTo.value}`);
+    }
+
+    if (qExtItems.length > 0) {
+      params.qExt = qExtItems.join('&');
     }
 
     const sortItems = [];
@@ -173,13 +182,25 @@
 
     loadProducts();
   };
+
+  watch(
+    () => dateTo.value,
+    (value) => {
+      const unixFrom = unixDateTime(dateFrom.value);
+      const unixTo = unixDateTime(value);
+
+      if (unixFrom <= unixTo) {
+        loadProducts();
+      }
+    }
+  );
 </script>
 
 <template>
   <div class="xl:p-5">
     <ClientOnly>
       <div class="flex">
-        <div class="py-4 pl-4 hidden xl:block">
+        <div class="py-4 pl-4 hidden 2xl:block">
           <WidgetOptions
             class="mb-4"
             @selected-row-size="(v) => onSelectproductsSize(v)"
@@ -279,7 +300,7 @@
 
           <div
             :class="`grid md:grid-cols-3 ${
-              display === 'grid' ? 'xl:grid-cols-4' : 'xl:grid-cols-1'
+              display === 'grid' ? 'xl:grid-cols-3' : 'xl:grid-cols-1'
             } gap-4`"
             v-if="products.length > 0"
           >
@@ -290,7 +311,7 @@
 
           <div
             :class="`grid md:grid-cols-3 ${
-              display === 'grid' ? 'xl:grid-cols-4' : 'xl:grid-cols-1'
+              display === 'grid' ? 'xl:grid-cols-3' : 'xl:grid-cols-1'
             } gap-4`"
             v-else-if="products.length === 0 && isLoading"
           >

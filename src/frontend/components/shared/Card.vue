@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import dayjs from 'dayjs';
+  const store = storeCart();
 
   const props = defineProps({
     item: {
@@ -21,7 +21,7 @@
   const cardTitleRef: any = ref(null);
 
   const addToCart = (item: any) => {
-    console.log(item);
+    store.setCart(item);
   };
 
   const wishList = (item: any) => {
@@ -72,6 +72,7 @@
           >
             Add to Cart
           </button>
+
           <button
             title="wishlist"
             @click="wishList(item)"
@@ -79,6 +80,7 @@
           >
             <i class="pi pi-heart"></i>
           </button>
+
           <button
             title="view"
             @click="viewProduct($event)"

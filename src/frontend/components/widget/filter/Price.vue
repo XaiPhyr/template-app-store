@@ -39,7 +39,7 @@
 <template>
   <div class="">
     <div class="p-2 flex gap-4 justify-center">
-      <div class="font-bold text-center">Price Range</div>
+      <div class="font-bold text-center">Price</div>
       <i
         v-if="!isShowingContent"
         @click="isShowingContent = !isShowingContent"
