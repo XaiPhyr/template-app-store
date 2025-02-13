@@ -144,17 +144,25 @@ func (m *Product) applyFilter(q *bun.SelectQuery, qExt string) *bun.SelectQuery 
 	splitQExt := splitQExt(qExt)
 
 	if len(splitQExt) > 0 {
-		key := splitQExt[0]
-		value := splitQExt[1]
+		for _, item := range splitQExt {
+			if strings.Contains(item, "=") {
+				splitItem := strings.Split(item, "=")
+				key := splitItem[0]
+				value := splitItem[1]
 
-		if key == "price" {
-			splitValue := strings.Split(value, "-")
-			q = q.Where("price >= ?", splitValue[0]).Where("price <= ?", splitValue[1])
-		} else if key == "category" {
-			splitValue := strings.Split(value, ",")
-			q = q.Where("category IN (?)", bun.In(splitValue))
-		} else {
-			q = q.Where(key+" = ?", value)
+				if key == "price" {
+					splitValue := strings.Split(value, "-")
+					q = q.Where("price >= ?", splitValue[0]).Where("price <= ?", splitValue[1])
+				} else if key == "category" {
+					splitValue := strings.Split(value, ",")
+					q = q.Where("category IN (?)", bun.In(splitValue))
+				} else if key == "created_at" {
+					splitValue := strings.Split(value, "|")
+					q = q.Where("created_at >= ?", splitValue[0]).Where("created_at <= ?", splitValue[1])
+				} else {
+					q = q.Where(key+" = ?", value)
+				}
+			}
 		}
 	}
 
