@@ -43,6 +43,7 @@
         />
 
         <div
+          v-if="isBefore(item.created_at)"
           class="hover:cursor-pointer absolute top-1 right-1 bg-blue-500 text-white px-3 py-1 text-xs"
         >
           NEW

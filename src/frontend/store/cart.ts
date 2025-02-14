@@ -9,6 +9,12 @@ const storeCart = defineStore('cart', () => {
   });
 
   const getTotal = computed(() => {
+    const total = stateCart.value.reduce((a: any, b: any) => {
+      return a + b.total;
+    }, 0);
+
+    stateTotal.value = total;
+
     return stateTotal.value;
   });
 
@@ -19,8 +25,8 @@ const storeCart = defineStore('cart', () => {
 
     if (!existingItem) {
       item.quantity = 1;
+      item.total = item.price;
       stateCart.value.push(item);
-      stateTotal.value += item.price * item.quantity;
       return;
     }
 
@@ -28,30 +34,35 @@ const storeCart = defineStore('cart', () => {
 
     stateCart.value[index].quantity += 1;
 
-    stateTotal.value += item.price;
+    item.total += item.price;
   };
 
   const setTotal = (item: any, method: string) => {
     if (method === 'plus') {
-      stateTotal.value += item.price;
+      item.total += item.price;
       return;
     }
 
-    stateTotal.value -= item.price;
+    item.total -= item.price;
   };
 
   const removeItem = (item: any) => {
-    stateTotal.value -= item.price * item.quantity;
+    stateTotal.value -= item.total;
 
     stateCart.value = stateCart.value.filter((x: any) => {
       return x !== item;
     });
+
+    if (stateTotal.value < 0) {
+      stateTotal.value = 0.0;
+    }
   };
 
   return {
     stateCart,
     getCart,
     setCart,
+    stateTotal,
     getTotal,
     setTotal,
     removeItem,

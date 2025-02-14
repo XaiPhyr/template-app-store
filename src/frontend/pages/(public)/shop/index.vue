@@ -149,6 +149,11 @@
     loadProducts();
   };
 
+  const onSortBy = () => {
+    productsPage.value = 1;
+    loadProducts();
+  };
+
   const onSelectPage = (page: string) => {
     if (page === 'next') {
       if (productsPage.value < productsTotalPage.value) {
@@ -184,6 +189,18 @@
   };
 
   watch(
+    () => dateFrom.value,
+    (value) => {
+      const unixFrom = unixDateTime(value);
+      const unixTo = unixDateTime(dateTo.value);
+
+      if (unixFrom <= unixTo) {
+        loadProducts();
+      }
+    }
+  );
+
+  watch(
     () => dateTo.value,
     (value) => {
       const unixFrom = unixDateTime(dateFrom.value);
@@ -213,9 +230,9 @@
             v-model:sort-by-name="sortByName"
             v-model:sort-by-price="sortByPrice"
             v-model:sort-by-date="sortByDate"
-            @selected-sort-by-name="loadProducts"
-            @selected-sort-by-date="loadProducts"
-            @selected-sort-by-price="loadProducts"
+            @selected-sort-by-name="onSortBy"
+            @selected-sort-by-date="onSortBy"
+            @selected-sort-by-price="onSortBy"
           />
 
           <WidgetFilter
@@ -240,7 +257,7 @@
 
           <button
             @click="onResetFilter"
-            class="bg-slate-500 hover:bg-slate-600 py-1 w-full text-white active:bg-slate-700 active:scale-105"
+            class="bg-slate-500 hover:bg-slate-600 py-2 w-full text-white active:bg-slate-700 active:scale-105"
           >
             Reset Filter
           </button>
@@ -324,7 +341,7 @@
         </div>
 
         <div class="py-4 pr-4 hidden xl:block">
-          <WebCart />
+          <WebCart class="w-80" />
         </div>
       </div>
     </ClientOnly>
