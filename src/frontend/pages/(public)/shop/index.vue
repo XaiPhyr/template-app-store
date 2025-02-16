@@ -12,6 +12,7 @@
   const display = ref('grid');
   const keyword = ref('');
   const isLoading: Ref<boolean, boolean> = ref(false);
+  const openDrawer = ref(false);
 
   const products: any = ref([]);
   const productsPage = ref(1);
@@ -91,14 +92,12 @@
 
     const data = await readProducts(params);
 
-    if (!data) {
-      productsTotalSize.value = 1;
-      productsTotalPage.value = 1;
-    }
-
     if (data) {
       const { results, min_price, max_price, total } = data;
       if (!results) {
+        productsPage.value = 1;
+        productsTotalSize.value = 1;
+        productsTotalPage.value = 1;
         isLoading.value = false;
         return;
       }
@@ -265,19 +264,28 @@
 
         <div class="p-4 w-full">
           <div class="mb-4">
-            <div class="relative">
-              <span
-                class="absolute left-0 top-1/2 transform -translate-y-1/2 px-2 text-gray-500 hover:cursor-pointer"
+            <div class="flex gap-4 justify-between">
+              <div class="relative w-full">
+                <span
+                  class="absolute left-0 top-1/2 transform -translate-y-1/2 px-2 text-gray-500 hover:cursor-pointer"
+                >
+                  <i class="pi pi-search"></i>
+                </span>
+                <input
+                  @change="loadProducts"
+                  v-model="keyword"
+                  type="text"
+                  class="pl-8 pr-3 py-2 border w-full focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  placeholder="Search"
+                />
+              </div>
+
+              <button
+                @click="openDrawer = true"
+                class="border border-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 hover:text-white flex justify-center items-center px-3 block lg:hidden"
               >
-                <i class="pi pi-search"></i>
-              </span>
-              <input
-                @change="loadProducts"
-                v-model="keyword"
-                type="text"
-                class="pl-8 pr-3 py-2 border w-full focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                placeholder="Search"
-              />
+                <i class="pi pi-shopping-cart"></i>
+              </button>
             </div>
           </div>
 
@@ -342,6 +350,28 @@
 
         <div class="py-4 pr-4 hidden xl:block">
           <WebCart class="w-80" />
+        </div>
+      </div>
+
+      <transition name="fade">
+        <div
+          v-if="openDrawer"
+          class="fixed inset-0 bg-black bg-opacity-10 backdrop-blur-sm"
+          @click="openDrawer = false"
+        ></div>
+      </transition>
+
+      <div
+        class="fixed bottom-0 h-1/2 w-full bg-white p-5 transform transition-transform duration-500 overflow-scroll"
+        :class="openDrawer ? 'translate-y-0' : 'translate-y-full'"
+      >
+        <div class="flex justify-end">
+          <button @click="openDrawer = false" class="text-gray-500">
+            <i class="pi pi-times" />
+          </button>
+        </div>
+        <div class="mt-3">
+          <WebCart class="w-full" />
         </div>
       </div>
     </ClientOnly>

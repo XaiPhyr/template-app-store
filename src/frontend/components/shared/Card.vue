@@ -36,7 +36,7 @@
 <template>
   <div class="">
     <div class="border hover:border-slate-400" v-if="display === 'grid'">
-      <div class="relative pt-1 px-1 hidden md:block h-64">
+      <div class="relative pt-1 px-1 h-64">
         <img
           class="object-fill h-full w-full"
           src="https://fastly.picsum.photos/id/13/2500/1667.jpg?hmac=SoX9UoHhN8HyklRA4A3vcCWJMVtiBXUg0W4ljWTor7s"
@@ -52,10 +52,17 @@
       <div class="p-5">
         <div
           ref="cardTitleRef"
-          class="text-base font-semibold tracking-wide truncate hover:overflow-visible hover:whitespace-normal hover:text-ellipsis"
+          class="text-base tracking-wide truncate hover:overflow-visible hover:whitespace-normal hover:text-ellipsis"
           :title="item.name"
         >
-          {{ item.name }}
+          <div class="flex justify-between">
+            <div class="font-semibold">
+              {{ item.name }}
+            </div>
+            <div v-if="store.getQuantity(item)" class="md:hidden block">
+              x {{ store.getQuantity(item) }}
+            </div>
+          </div>
         </div>
         <div class="text-xs text-slate-500">{{ item.category }}</div>
         <div class="text-xs text-slate-500">
@@ -69,7 +76,7 @@
         <div class="flex justify-end mt-5 gap-1">
           <button
             @click="addToCart(item)"
-            class="bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 py-1 rounded w-full text-white"
+            class="bg-indigo-500 hover:bg-indigo-600 py-1 rounded w-full active:bg-indigo-700 active:scale-105 active:rounded text-white"
           >
             Add to Cart
           </button>
@@ -95,20 +102,34 @@
 
     <div class="border hover:border-slate-400" v-if="display === 'list'">
       <div class="xl:grid xl:grid-cols-5 gap-4">
-        <div class="py-1 px-1 hidden md:block h-full w-full">
+        <div class="relative py-1 px-1 block h-full w-full">
           <img
             class="object-cover h-full"
             src="https://fastly.picsum.photos/id/13/2500/1667.jpg?hmac=SoX9UoHhN8HyklRA4A3vcCWJMVtiBXUg0W4ljWTor7s"
           />
+
+          <div
+            v-if="isBefore(item.created_at)"
+            class="hover:cursor-pointer absolute top-1 right-1 bg-blue-500 text-white px-3 py-1 text-xs"
+          >
+            NEW
+          </div>
         </div>
 
         <div class="p-5 col-span-4">
           <div
             ref="cardTitleRef"
-            class="text-base font-semibold tracking-wide truncate hover:overflow-visible hover:whitespace-normal hover:text-ellipsis"
+            class="text-base tracking-wide truncate hover:overflow-visible hover:whitespace-normal hover:text-ellipsis"
             :title="item.name"
           >
-            {{ item.name }}
+            <div class="flex justify-between">
+              <div class="font-semibold">
+                {{ item.name }}
+              </div>
+              <div v-if="store.getQuantity(item)" class="md:hidden block">
+                x {{ store.getQuantity(item) }}
+              </div>
+            </div>
           </div>
           <div class="text-xs text-slate-500">{{ item.category }}</div>
           <div class="text-xs text-slate-500">

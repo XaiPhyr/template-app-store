@@ -23,10 +23,12 @@
   });
 
   const onCheckout = () => {
-    const stringify = JSON.stringify(store.stateCart);
-    const b64 = btoa(stringify);
+    if (cartLength.value > 0) {
+      const stringify = JSON.stringify(store.stateCart);
+      const b64 = btoa(stringify);
 
-    router.replace(`/shop?cart=${b64}`);
+      router.replace(`/shop?cart=${b64}`);
+    }
   };
 
   const quantityPlus = (item: any) => {
@@ -73,9 +75,8 @@
 
             <div class="my-5">
               <button
-                disabled
                 @click="onCheckout"
-                class="bg-slate-500 hover:bg-slate-600 py-3 w-full text-white active:bg-slate-700 active:scale-105"
+                class="bg-green-500 hover:bg-green-600 py-3 w-full text-white active:bg-green-700 active:scale-105"
               >
                 CHECKOUT
               </button>

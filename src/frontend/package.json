@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "nuxt build",
-    "start": "nuxt dev --port 8090",
+    "start": "nuxt dev --port 8090 --host",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"

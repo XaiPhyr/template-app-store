@@ -46,6 +46,18 @@ const storeCart = defineStore('cart', () => {
     item.total -= item.price;
   };
 
+  const getQuantity = (item: any) => {
+    const existingItem = stateCart.value.find((x: any) => {
+      return x.id === item.id;
+    });
+
+    if (!existingItem) {
+      return '';
+    }
+
+    return existingItem.quantity;
+  };
+
   const removeItem = (item: any) => {
     stateTotal.value -= item.total;
 
@@ -65,6 +77,7 @@ const storeCart = defineStore('cart', () => {
     stateTotal,
     getTotal,
     setTotal,
+    getQuantity,
     removeItem,
   };
 });
