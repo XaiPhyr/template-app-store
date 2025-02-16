@@ -1,5 +1,6 @@
 <script setup lang="ts">
   const router = useRouter();
+  const route: any = useRoute();
 
   const store = storeCart();
   const items: any = ref([]);
@@ -18,6 +19,24 @@
     }
   );
 
+  onMounted(() => {
+    items.value = store.getCart;
+    total.value = store.getTotal;
+
+    if (route.query.cart) {
+      const decodeB64 = atob(route.query.cart || '');
+
+      items.value = JSON.parse(decodeB64 || '');
+
+      total.value = items.value.reduce((a: any, b: any) => {
+        return a + b.total;
+      }, 0);
+
+      store.stateCart = items.value;
+      store.stateTotal = total.value;
+    }
+  });
+
   const cartLength = computed(() => {
     return store.stateCart.length;
   });
@@ -26,8 +45,9 @@
     if (cartLength.value > 0) {
       const stringify = JSON.stringify(store.stateCart);
       const b64 = btoa(stringify);
+      localStorage.setItem('cart', b64);
 
-      router.replace(`/shop?cart=${b64}`);
+      router.push(`/checkout?cart=${b64}`);
     }
   };
 
@@ -100,7 +120,7 @@
           <div class="p-1">
             <div class="px-5 py-1">
               <div class="grid grid-cols-4 gap-1">
-                <div class="col-span-2 content-center">
+                <div class="col-span-2 content-center text-md">
                   {{ item.name }}
                 </div>
                 <div class="col-span-2 flex justify-end">

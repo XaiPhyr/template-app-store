@@ -3,7 +3,7 @@ import indigoPreset from './presets/indigo';
 
 const config = defineNuxtConfig({
   compatibilityDate: '2024-11-01',
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   app: {
     head: {
       titleTemplate: '%s - APP STORE',

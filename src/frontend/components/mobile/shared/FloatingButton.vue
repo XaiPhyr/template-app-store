@@ -25,12 +25,7 @@
       :class="sideNavOpen ? 'translate-x-0' : '-translate-x-full'"
     >
       <div class="absolute left-0 top-0 h-full w-64 bg-white shadow-lg p-4">
-        <ul>
-          <li><a href="#" class="block p-2">Home</a></li>
-          <li><a href="#" class="block p-2">About</a></li>
-          <li><a href="#" class="block p-2">Services</a></li>
-          <li><a href="#" class="block p-2">Contact</a></li>
-        </ul>
+        <SharedNavigations />
       </div>
     </div>
   </div>

@@ -324,9 +324,8 @@
           </div>
 
           <div
-            :class="`grid md:grid-cols-3 ${
-              display === 'grid' ? 'xl:grid-cols-3' : 'xl:grid-cols-1'
-            } gap-4`"
+            class="grid md:grid-cols-3 gap-4 pb-16"
+            :class="display === 'grid' ? 'xl:grid-cols-3' : 'xl:grid-cols-1'"
             v-if="products.length > 0"
           >
             <div class="" v-for="(item, index) in products" :key="index">
@@ -335,9 +334,8 @@
           </div>
 
           <div
-            :class="`grid md:grid-cols-3 ${
-              display === 'grid' ? 'xl:grid-cols-3' : 'xl:grid-cols-1'
-            } gap-4`"
+            class="grid md:grid-cols-3 gap-4 pb-16"
+            :class="display === 'grid' ? 'xl:grid-cols-3' : 'xl:grid-cols-1'"
             v-else-if="products.length === 0 && isLoading"
           >
             <div class="" v-for="(_, index) in 10" :key="index">
@@ -362,7 +360,7 @@
       </transition>
 
       <div
-        class="fixed bottom-0 h-1/2 w-full bg-white p-5 transform transition-transform duration-500 overflow-scroll"
+        class="fixed pb-[5rem] bottom-0 h-1/2 w-full bg-white p-5 transform transition-transform duration-500 overflow-scroll"
         :class="openDrawer ? 'translate-y-0' : 'translate-y-full'"
       >
         <div class="flex justify-end">

@@ -2,16 +2,14 @@
 
 <template>
   <div class="">
-    <!-- <div class="hidden md:block">
+    <div class="hidden md:block">
       <CoreHeader />
-    </div> -->
-    <slot />
-    <!-- <div class="hidden md:block">
-      <CoreFooter />
-    </div> -->
+    </div>
 
-    <div class="block sm:hidden">
-      <MobileSharedFloatingButton />
+    <slot />
+
+    <div class="block md:hidden">
+      <CoreFooter />
     </div>
   </div>
 </template>
