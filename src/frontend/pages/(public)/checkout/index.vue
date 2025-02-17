@@ -28,6 +28,7 @@
   const standardAmount = ref(29.99);
   const expressAmount = ref(79.99);
   const proceedToPayment = ref(false);
+  const paymentMethod = ref('');
 
   if (route.query.cart) {
     const decodeB64 = atob(route.query.cart || '');
@@ -263,6 +264,87 @@
               </div>
             </div>
           </div>
+
+          <div :class="proceedToPayment ? 'block' : 'hidden'">
+            <label class="flex items-center space-x-2 border p-4 mb-4">
+              <input
+                type="radio"
+                name="option"
+                value="credit-card"
+                class="w-4 h-4"
+                v-model="paymentMethod"
+              />
+              <span>Credit Card</span>
+            </label>
+
+            <div
+              class="border p-4 mb-4"
+              :class="paymentMethod === 'credit-card' ? 'block' : 'hidden'"
+            >
+              <div class="font-bold mb-4">Card Details</div>
+              <div class="flex md:flex-row flex-col gap-4 mb-4">
+                <div class="flex flex-col w-full">
+                  <label for="id-card-name" class="">Name on card:</label>
+                  <input
+                    id="id-card-name"
+                    type="text"
+                    class="p-2 border focus:outline-indigo-500"
+                  />
+                </div>
+              </div>
+              <div class="flex md:flex-row flex-col gap-4 mb-4">
+                <div class="flex flex-col w-full">
+                  <label for="id-card-number" class="">Card Number:</label>
+                  <input
+                    id="id-card-number"
+                    type="text"
+                    class="p-2 border focus:outline-indigo-500"
+                  />
+                </div>
+              </div>
+              <div class="flex md:flex-row flex-col gap-4 mb-4">
+                <div class="flex flex-col w-full">
+                  <label for="id-card-expiration" class="">Expiration:</label>
+                  <input
+                    id="id-card-expiration"
+                    type="text"
+                    class="p-2 border focus:outline-indigo-500"
+                  />
+                </div>
+
+                <div class="flex flex-col w-full">
+                  <label for="id-card-cvv" class="">CVV:</label>
+                  <input
+                    id="id-card-cvv"
+                    type="text"
+                    class="p-2 border focus:outline-indigo-500"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <label class="flex items-center space-x-2 border p-4 mb-4">
+              <input
+                type="radio"
+                name="option"
+                value="paypal"
+                class="w-4 h-4"
+                v-model="paymentMethod"
+              />
+              <span>PayPal</span>
+            </label>
+
+            <label class="flex items-center space-x-2 border p-4">
+              <input
+                type="radio"
+                name="option"
+                value="gcash"
+                class="w-4 h-4"
+                v-model="paymentMethod"
+              />
+              <span>GCash</span>
+            </label>
+          </div>
         </div>
       </div>
 
@@ -280,7 +362,7 @@
             />
             <button
               @click="onApplyVoucher"
-              class="bg-green-500 hover:bg-green-600 py-2 px-4 text-white active:bg-green-700 active:scale-105"
+              class="bg-indigo-500 hover:bg-indigo-600 py-2 px-4 text-white active:bg-indigo-700 active:scale-105"
             >
               Apply
             </button>
@@ -288,6 +370,7 @@
         </div>
         <div class="border h-full w-auto p-4 content-center mb-4">
           <div class="">
+            <div class="font-bold mb-4 uppercase text-lg">Order Summary</div>
             <div
               class="first:mt-4 last:mb-4"
               v-for="(item, index) in items"
@@ -372,10 +455,19 @@
         <div class="flex justify-end gap-4">
           <div class="w-full">
             <button
+              v-if="!proceedToPayment"
               @click="proceed"
-              class="bg-green-500 hover:bg-green-600 py-3 w-full text-white active:bg-green-700 active:scale-105"
+              class="bg-indigo-500 hover:bg-indigo-600 py-3 w-full text-white active:bg-indigo-700 active:scale-105"
             >
               Proceed to payment
+            </button>
+
+            <button
+              v-else
+              @click="proceed"
+              class="bg-indigo-500 hover:bg-indigo-600 py-3 w-full text-white active:bg-indigo-700 active:scale-105"
+            >
+              {{ paymentMethod === 'paypal' ? 'PayPal' : 'Place Order' }}
             </button>
           </div>
         </div>

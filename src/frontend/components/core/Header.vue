@@ -4,6 +4,7 @@
 
   onMounted(() => {
     currency.value = localStorage.getItem('currency');
+    setCurrency(currency.value);
   });
 
   const goTo = (link: string) => {
