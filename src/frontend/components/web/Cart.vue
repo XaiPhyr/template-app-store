@@ -114,24 +114,24 @@
                 CHECKOUT
               </button>
             </div>
-
-            <div class="my-5">
-              <SharedToasts
-                summary="Copied!"
-                detail="URL has been copied."
-                v-slot="{ show }"
-              >
-                <button
-                  @click="onCopyCart(show)"
-                  class="bg-slate-500 hover:bg-slate-600 py-2 w-full text-white active:bg-slate-700 active:scale-105"
-                >
-                  COPY CART
-                </button>
-              </SharedToasts>
-            </div>
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="mb-4">
+      <SharedToasts
+        summary="Copied!"
+        detail="URL has been copied."
+        v-slot="{ show }"
+      >
+        <button
+          @click="onCopyCart(show)"
+          class="bg-slate-500 hover:bg-slate-600 py-2 w-full text-white active:bg-slate-700 active:scale-105"
+        >
+          COPY CART
+        </button>
+      </SharedToasts>
     </div>
 
     <div class="border">

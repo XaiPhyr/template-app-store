@@ -1,16 +1,29 @@
+let currency = ref('USD');
+
 const formatCurrencies = (payload: number) => {
-  const obj: any = {
-    style: 'currency',
-    currency: 'USD',
-  };
+  const ls = localStorage.getItem('currency');
 
-  const currency = new Intl.NumberFormat('en', obj);
-
-  if (!payload) {
-    return currency.format(0);
+  if (ls) {
+    currency.value = ls;
   }
 
-  return currency.format(payload);
+  const obj: any = {
+    style: 'currency',
+    currency: currency.value,
+  };
+
+  const output = new Intl.NumberFormat('en', obj);
+
+  if (!payload) {
+    return output.format(0);
+  }
+
+  return output.format(payload);
 };
 
-export { formatCurrencies };
+const setCurrency = (item: string) => {
+  currency.value = item;
+  localStorage.setItem('currency', item);
+};
+
+export { formatCurrencies, setCurrency };

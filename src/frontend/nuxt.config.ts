@@ -26,7 +26,7 @@ const config = defineNuxtConfig({
   },
   routeRules: {
     '/': {
-      redirect: '/shop',
+      // redirect: '/shop',
     },
   },
   runtimeConfig: {

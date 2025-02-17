@@ -27,6 +27,7 @@
   const shippingMethod = ref('standard');
   const standardAmount = ref(29.99);
   const expressAmount = ref(79.99);
+  const proceedToPayment = ref(false);
 
   if (route.query.cart) {
     const decodeB64 = atob(route.query.cart || '');
@@ -46,6 +47,7 @@
 
   const proceed = () => {
     localStorage.removeItem('cart');
+    proceedToPayment.value = !proceedToPayment.value;
   };
 
   const computedTotal = () => {
@@ -111,97 +113,100 @@
               <i class="pi pi-credit-card text-xl"></i>
               Checkout
             </div>
-            <div class="text-sm text-slate-500 mb-4">
-              <span class="font-bold">Notice: </span>We value your privacy and
-              do not store any payment or personal details after your
-              transaction is completed. All payment processing is securely
-              handled by our trusted third-party providers, ensuring that your
-              sensitive information, including credit card details, is not saved
-              on our servers. We implement strict security measures to protect
-              your data during the checkout process. By proceeding with your
-              purchase, you acknowledge that our company does not retain or
-              access your payment information.
-            </div>
-            <div class="text-xl font-bold mb-4">Billing Details</div>
-            <div class="flex md:flex-row flex-col gap-4 mb-4">
-              <div class="flex flex-col w-full">
-                <label for="id-name" class="font-bold">Name:</label>
-                <input
-                  id="id-name"
-                  type="text"
-                  class="p-2 border focus:outline-indigo-500"
-                />
+
+            <div :class="proceedToPayment ? 'hidden' : 'block'">
+              <div class="text-sm text-slate-500 mb-4 hide">
+                <span class="font-bold">Notice: </span>We value your privacy and
+                do not store any payment or personal details after your
+                transaction is completed. All payment processing is securely
+                handled by our trusted third-party providers, ensuring that your
+                sensitive information, including credit card details, is not
+                saved on our servers. We implement strict security measures to
+                protect your data during the checkout process. By proceeding
+                with your purchase, you acknowledge that our company does not
+                retain or access your payment information.
               </div>
-            </div>
-            <div class="flex md:flex-row flex-col gap-4 mb-4">
-              <div class="flex flex-col w-full">
-                <label for="id-address" class="font-bold">Address:</label>
-                <input
-                  id="id-address"
-                  type="text"
-                  class="p-2 border focus:outline-indigo-500"
-                />
-              </div>
-            </div>
-            <div class="flex md:flex-row flex-col gap-4 mb-4">
-              <div class="flex flex-col w-full">
-                <label for="id-country" class="font-bold">Country:</label>
-                <input
-                  id="id-country"
-                  type="text"
-                  class="p-2 border focus:outline-indigo-500"
-                />
-              </div>
-              <div class="flex flex-col w-full">
-                <label for="id-postal" class="font-bold">Postal:</label>
-                <input
-                  id="id-postal"
-                  type="text"
-                  class="p-2 border focus:outline-indigo-500"
-                />
-              </div>
-            </div>
-            <div class="flex md:flex-row flex-col gap-4 mb-4">
-              <div class="flex flex-col w-full">
-                <label for="id-email" class="font-bold">Email:</label>
-                <input
-                  id="id-email"
-                  type="text"
-                  class="p-2 border focus:outline-indigo-500"
-                />
-              </div>
-              <div class="flex flex-col w-full">
-                <label for="id-mobile" class="font-bold">Mobile:</label>
-                <input
-                  id="id-mobile"
-                  type="text"
-                  class="p-2 border focus:outline-indigo-500"
-                />
-              </div>
-            </div>
-            <div class="flex md:flex-row flex-col gap-4">
-              <div class="">
-                <label class="flex items-center space-x-2 mb-1">
+              <div class="text-xl font-bold mb-4">Billing Details</div>
+              <div class="flex md:flex-row flex-col gap-4 mb-4">
+                <div class="flex flex-col w-full">
+                  <label for="id-name" class="font-bold">Name:</label>
                   <input
-                    type="checkbox"
-                    name="option"
-                    value="newsletter"
-                    class="w-4 h-4"
+                    id="id-name"
+                    type="text"
+                    class="p-2 border focus:outline-indigo-500"
                   />
-                  <span class="text-sm text-slate-500">
-                    Sign Up for Weekly Newsletters
-                  </span>
-                </label>
-                <div class="text-xs text-slate-500 italic">
-                  By signing up for our weekly newsletter, you'll receive
-                  exclusive updates, special offers, and the latest news
-                  straight to your inbox.
+                </div>
+              </div>
+              <div class="flex md:flex-row flex-col gap-4 mb-4">
+                <div class="flex flex-col w-full">
+                  <label for="id-address" class="font-bold">Address:</label>
+                  <input
+                    id="id-address"
+                    type="text"
+                    class="p-2 border focus:outline-indigo-500"
+                  />
+                </div>
+              </div>
+              <div class="flex md:flex-row flex-col gap-4 mb-4">
+                <div class="flex flex-col w-full">
+                  <label for="id-country" class="font-bold">Country:</label>
+                  <input
+                    id="id-country"
+                    type="text"
+                    class="p-2 border focus:outline-indigo-500"
+                  />
+                </div>
+                <div class="flex flex-col w-full">
+                  <label for="id-postal" class="font-bold">Postal:</label>
+                  <input
+                    id="id-postal"
+                    type="text"
+                    class="p-2 border focus:outline-indigo-500"
+                  />
+                </div>
+              </div>
+              <div class="flex md:flex-row flex-col gap-4 mb-4">
+                <div class="flex flex-col w-full">
+                  <label for="id-email" class="font-bold">Email:</label>
+                  <input
+                    id="id-email"
+                    type="text"
+                    class="p-2 border focus:outline-indigo-500"
+                  />
+                </div>
+                <div class="flex flex-col w-full">
+                  <label for="id-mobile" class="font-bold">Mobile:</label>
+                  <input
+                    id="id-mobile"
+                    type="text"
+                    class="p-2 border focus:outline-indigo-500"
+                  />
+                </div>
+              </div>
+              <div class="flex md:flex-row flex-col gap-4">
+                <div class="">
+                  <label class="flex items-center space-x-2 mb-1">
+                    <input
+                      type="checkbox"
+                      name="option"
+                      value="newsletter"
+                      class="w-4 h-4"
+                    />
+                    <span class="text-sm text-slate-500">
+                      Sign Up for Weekly Newsletters
+                    </span>
+                  </label>
+                  <div class="text-xs text-slate-500 italic">
+                    By signing up for our weekly newsletter, you'll receive
+                    exclusive updates, special offers, and the latest news
+                    straight to your inbox.
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="">
+          <div :class="proceedToPayment ? 'hidden' : 'block'">
             <div class="text-xl font-bold mb-4">Shipping Method</div>
 
             <div class="mb-8">

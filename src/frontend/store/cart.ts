@@ -30,11 +30,8 @@ const storeCart = defineStore('cart', () => {
       return;
     }
 
-    const index = stateCart.value.indexOf(existingItem);
-
-    stateCart.value[index].quantity += 1;
-
-    item.total += item.price;
+    existingItem.quantity += 1;
+    existingItem.total += existingItem.price;
   };
 
   const setTotal = (item: any, method: string) => {
