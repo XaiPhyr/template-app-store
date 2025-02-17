@@ -20,15 +20,24 @@
   const router = useRouter();
   const items: Ref<CartsInterface> = ref([]);
   const total = ref(0);
+  const subtotal = ref(0);
+  const voucher = ref('');
+  const hasPromo = ref(false);
+  const promoAmount = ref(0);
+  const shippingMethod = ref('standard');
+  const standardAmount = ref(29.99);
+  const expressAmount = ref(79.99);
 
   if (route.query.cart) {
     const decodeB64 = atob(route.query.cart || '');
 
     items.value = JSON.parse(decodeB64 || '');
 
-    total.value = items.value.reduce((a: any, b: any) => {
+    subtotal.value = items.value.reduce((a: any, b: any) => {
       return a + b.total;
     }, 0);
+
+    total.value = subtotal.value;
   }
 
   const goBack = () => {
@@ -38,6 +47,49 @@
   const proceed = () => {
     localStorage.removeItem('cart');
   };
+
+  const computedTotal = () => {
+    if (hasPromo.value) {
+      const discounted = (subtotal.value * promoAmount.value) / 100;
+
+      if (shippingMethod.value === 'express') {
+        const withShipping = subtotal.value + expressAmount.value;
+        return (total.value = withShipping - discounted + expressAmount.value);
+      }
+
+      return (total.value = subtotal.value - discounted + standardAmount.value);
+    }
+
+    if (shippingMethod.value === 'express') {
+      return (total.value = subtotal.value + expressAmount.value);
+    }
+
+    return (total.value = subtotal.value + standardAmount.value);
+  };
+
+  const onApplyVoucher = () => {
+    if (voucher.value.toLocaleLowerCase() === 'firstcomer') {
+      hasPromo.value = true;
+      promoAmount.value = 25;
+      return;
+    }
+
+    hasPromo.value = false;
+    promoAmount.value = 0;
+  };
+
+  const getShippingAmount = computed({
+    get() {
+      if (shippingMethod.value === 'standard') {
+        return formatCurrencies(standardAmount.value);
+      }
+
+      return formatCurrencies(expressAmount.value);
+    },
+    set(v) {
+      //
+    },
+  });
 </script>
 
 <template>
@@ -134,7 +186,7 @@
                     type="checkbox"
                     name="option"
                     value="newsletter"
-                    class="w-4 h-4 text-blue-600 focus:ring-blue-500"
+                    class="w-4 h-4"
                   />
                   <span class="text-sm text-slate-500">
                     Sign Up for Weekly Newsletters
@@ -160,12 +212,13 @@
                       type="radio"
                       name="option"
                       value="standard"
-                      class="w-4 h-4 text-blue-600 focus:ring-blue-500"
+                      class="w-4 h-4"
+                      v-model="shippingMethod"
                     />
                     <span>Standard</span>
                   </label>
                   <div class="">
-                    {{ formatCurrencies(29.99) }}
+                    {{ formatCurrencies(standardAmount) }}
                   </div>
                 </div>
               </div>
@@ -186,12 +239,13 @@
                       type="radio"
                       name="option"
                       value="express"
-                      class="w-4 h-4 text-blue-600 focus:ring-blue-500"
+                      class="w-4 h-4"
+                      v-model="shippingMethod"
                     />
                     <span>Express</span>
                   </label>
                   <div class="">
-                    {{ formatCurrencies(74.99) }}
+                    {{ formatCurrencies(expressAmount) }}
                   </div>
                 </div>
               </div>
@@ -217,8 +271,10 @@
               id="id-voucher"
               type="text"
               class="p-2 border w-full focus:outline-indigo-500"
+              v-model="voucher"
             />
             <button
+              @click="onApplyVoucher"
               class="bg-green-500 hover:bg-green-600 py-2 px-4 text-white active:bg-green-700 active:scale-105"
             >
               Apply
@@ -268,16 +324,41 @@
             <div class="grid grid-cols-3">
               <div class="">Subtotal:</div>
               <div class="col-span-2 text-right">
-                {{ formatCurrencies(total) }}
+                {{ formatCurrencies(subtotal) }}
+              </div>
+            </div>
+
+            <div class="grid grid-cols-3" v-if="hasPromo && voucher !== ''">
+              <div class="col-span-2">
+                Promo <span class="font-bold">({{ voucher }})</span>:
+              </div>
+              <div class="text-right">{{ promoAmount }}%</div>
+            </div>
+
+            <hr class="my-2" />
+
+            <div class="text-slate-500 text-sm">
+              <div class="grid grid-cols-3">
+                <div class="col-span-2">Shipping:</div>
+                <div class="text-right">
+                  {{ getShippingAmount }}
+                </div>
+              </div>
+              <div class="text-xs">
+                {{
+                  shippingMethod === 'standard'
+                    ? '(1 to 3 business days)'
+                    : '(3 to 7 business days)'
+                }}
               </div>
             </div>
 
             <hr class="my-2" />
 
-            <div class="grid grid-cols-3">
-              <div class="text-xl">Total:</div>
-              <div class="col-span-2 text-right font-bold text-xl">
-                {{ formatCurrencies(total) }}
+            <div class="grid grid-cols-3 text-xl">
+              <div class="">Total:</div>
+              <div class="col-span-2 text-right font-bold">
+                {{ formatCurrencies(computedTotal()) }}
               </div>
             </div>
           </div>

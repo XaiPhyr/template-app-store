@@ -51,6 +51,19 @@
     }
   };
 
+  const onCopyCart = (show: any) => {
+    if (cartLength.value > 0) {
+      const stringify = JSON.stringify(store.stateCart);
+      const b64 = btoa(stringify);
+
+      navigator.clipboard
+        .writeText(`${window.location.origin}/checkout?cart=${b64}`)
+        .then(() => {
+          show();
+        });
+    }
+  };
+
   const quantityPlus = (item: any) => {
     item.quantity += 1;
     store.setTotal(item, 'plus');
@@ -100,6 +113,21 @@
               >
                 CHECKOUT
               </button>
+            </div>
+
+            <div class="my-5">
+              <SharedToasts
+                summary="Copied!"
+                detail="URL has been copied."
+                v-slot="{ show }"
+              >
+                <button
+                  @click="onCopyCart(show)"
+                  class="bg-slate-500 hover:bg-slate-600 py-2 w-full text-white active:bg-slate-700 active:scale-105"
+                >
+                  COPY CART
+                </button>
+              </SharedToasts>
             </div>
           </div>
         </div>
