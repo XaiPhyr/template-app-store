@@ -51,7 +51,7 @@
     proceedToPayment.value = !proceedToPayment.value;
   };
 
-  const computedTotal = () => {
+  const computedTotal = computed(() => {
     if (hasPromo.value) {
       const discounted = (subtotal.value * promoAmount.value) / 100;
 
@@ -68,7 +68,7 @@
     }
 
     return (total.value = subtotal.value + standardAmount.value);
-  };
+  });
 
   const onApplyVoucher = () => {
     if (voucher.value.toLocaleLowerCase() === 'firstcomer') {
@@ -93,18 +93,26 @@
       //
     },
   });
+
+  watch(
+    () => voucher.value,
+    (value) => {
+      if (value === '') {
+        onApplyVoucher();
+      }
+    }
+  );
 </script>
 
 <template>
   <div class="p-4 xl:px-64 pb-[5rem]">
     <div
-      @click="goBack"
       class="flex mb-4 text-blue-500 hover:cursor-pointer active:text-blue-600"
     >
-      <div class="content-center mr-2">
+      <div @click="goBack" class="content-center mr-2">
         <i class="pi pi-chevron-left text-xs"></i>
       </div>
-      <div class="content-center">Back</div>
+      <div @click="goBack" class="content-center">Back</div>
     </div>
     <div class="flex md:flex-row flex-col gap-4">
       <div class="w-full md:w-4/6">
@@ -191,7 +199,7 @@
                       type="checkbox"
                       name="option"
                       value="newsletter"
-                      class="w-4 h-4"
+                      class="w-4 h-4 accent-indigo-500"
                     />
                     <span class="text-sm text-slate-500">
                       Sign Up for Weekly Newsletters
@@ -218,7 +226,7 @@
                       type="radio"
                       name="option"
                       value="standard"
-                      class="w-4 h-4"
+                      class="w-4 h-4 accent-indigo-500"
                       v-model="shippingMethod"
                     />
                     <span>Standard</span>
@@ -245,7 +253,7 @@
                       type="radio"
                       name="option"
                       value="express"
-                      class="w-4 h-4"
+                      class="w-4 h-4 accent-indigo-500"
                       v-model="shippingMethod"
                     />
                     <span>Express</span>
@@ -274,7 +282,10 @@
                 class="w-4 h-4"
                 v-model="paymentMethod"
               />
-              <span>Credit Card</span>
+              <span class="flex gap-2">
+                <i class="pi pi-credit-card content-center"></i>
+                <div class="">Card</div>
+              </span>
             </label>
 
             <div
@@ -331,7 +342,10 @@
                 class="w-4 h-4"
                 v-model="paymentMethod"
               />
-              <span>PayPal</span>
+              <span class="flex gap-2">
+                <i class="pi pi-paypal content-center"></i>
+                <div class="">PayPal</div>
+              </span>
             </label>
 
             <label class="flex items-center space-x-2 border p-4">
@@ -342,7 +356,10 @@
                 class="w-4 h-4"
                 v-model="paymentMethod"
               />
-              <span>GCash</span>
+              <span class="flex gap-2">
+                <i class="pi pi-money-bill content-center"></i>
+                <div class="">GCash</div>
+              </span>
             </label>
           </div>
         </div>
@@ -350,7 +367,7 @@
 
       <div class="w-full md:w-2/6 h-full">
         <div class="border h-full w-auto p-4 mb-4">
-          <div class="flex gap-4">
+          <div class="flex gap-4 mb-4">
             <label for="id-voucher" class="font-bold content-center">
               Voucher:
             </label>
@@ -366,6 +383,12 @@
             >
               Apply
             </button>
+          </div>
+
+          <div class="text-xs text-slate-500">
+            To apply the coupon for a discount, simply enter the code before
+            completing your purchase. The discount will automatically be applied
+            to your total order amount once the code is validated.
           </div>
         </div>
         <div class="border h-full w-auto p-4 content-center mb-4">
@@ -446,7 +469,7 @@
             <div class="grid grid-cols-3 text-xl">
               <div class="">Total:</div>
               <div class="col-span-2 text-right font-bold">
-                {{ formatCurrencies(computedTotal()) }}
+                {{ formatCurrencies(computedTotal) }}
               </div>
             </div>
           </div>

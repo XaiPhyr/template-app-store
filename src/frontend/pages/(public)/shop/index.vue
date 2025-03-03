@@ -12,7 +12,8 @@
   const display = ref('grid');
   const keyword = ref('');
   const isLoading: Ref<boolean, boolean> = ref(false);
-  const openDrawer = ref(false);
+  const openDrawerCart = ref(false);
+  const openDrawerOptions = ref(false);
 
   const products: any = ref([]);
   const productsPage = ref(1);
@@ -219,8 +220,8 @@
         <div class="py-4 pl-4 hidden 2xl:block">
           <WidgetOptions
             class="mb-4"
-            @selected-row-size="(v) => onSelectproductsSize(v)"
-            @selected-display="(v) => (display = v)"
+            @selected-row-size="(v: number) => onSelectproductsSize(v)"
+            @selected-display="(v: string) => (display = v)"
           />
 
           <WidgetFilter
@@ -237,13 +238,13 @@
           <WidgetFilter
             class="mb-4"
             filter="categories"
-            @selected-category="(v) => onSelectCategory(v)"
+            @selected-category="(v: any) => onSelectCategory(v)"
           />
 
           <WidgetFilter
             class="mb-4"
             filter="price"
-            @selected-price-range="(v) => onSelectPiceRange(v)"
+            @selected-price-range="(v: SliderSlideEndEvent) => onSelectPiceRange(v)"
             :price-range="priceRange"
           />
 
@@ -281,10 +282,17 @@
               </div>
 
               <button
-                @click="openDrawer = true"
+                @click="openDrawerCart = true"
                 class="border border-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 hover:text-white flex justify-center items-center px-3 block lg:hidden"
               >
                 <i class="pi pi-shopping-cart"></i>
+              </button>
+
+              <button
+                @click="openDrawerOptions = true"
+                class="border border-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 hover:text-white flex justify-center items-center px-3 block lg:hidden"
+              >
+                <i class="pi pi-cog"></i>
               </button>
             </div>
           </div>
@@ -347,29 +355,93 @@
         </div>
 
         <div class="py-4 pr-4 hidden xl:block">
-          <WebCart class="w-80" />
+          <SharedCart class="w-80" />
         </div>
       </div>
 
       <transition name="fade">
         <div
-          v-if="openDrawer"
+          v-if="openDrawerCart"
           class="fixed inset-0 bg-black bg-opacity-10 backdrop-blur-sm"
-          @click="openDrawer = false"
+          @click="openDrawerCart = false"
         ></div>
       </transition>
 
       <div
         class="fixed pb-[5rem] bottom-0 h-1/2 w-full bg-white p-5 transform transition-transform duration-500 overflow-scroll"
-        :class="openDrawer ? 'translate-y-0' : 'translate-y-full'"
+        :class="openDrawerCart ? 'translate-y-0' : 'translate-y-full'"
       >
         <div class="flex justify-end">
-          <button @click="openDrawer = false" class="text-gray-500">
+          <button @click="openDrawerCart = false" class="text-gray-500">
             <i class="pi pi-times" />
           </button>
         </div>
         <div class="mt-3">
-          <WebCart class="w-full" />
+          <SharedCart class="w-full" />
+        </div>
+      </div>
+
+      <transition name="fade">
+        <div
+          v-if="openDrawerOptions"
+          class="fixed inset-0 bg-black bg-opacity-10 backdrop-blur-sm"
+          @click="openDrawerOptions = false"
+        ></div>
+      </transition>
+
+      <div
+        class="fixed pb-[5rem] bottom-0 h-1/2 w-full bg-white p-5 transform transition-transform duration-500 overflow-scroll"
+        :class="openDrawerOptions ? 'translate-y-0' : 'translate-y-full'"
+      >
+        <div class="flex justify-end">
+          <button @click="openDrawerOptions = false" class="text-gray-500">
+            <i class="pi pi-times" />
+          </button>
+        </div>
+        <div class="mt-3">
+          <WidgetOptions
+            class="mb-4 w-full"
+            @selected-row-size="(v: number) => onSelectproductsSize(v)"
+            @selected-display="(v: string) => (display = v)"
+          />
+
+          <WidgetFilter
+            class="mb-4 w-full"
+            filter="sort"
+            v-model:sort-by-name="sortByName"
+            v-model:sort-by-price="sortByPrice"
+            v-model:sort-by-date="sortByDate"
+            @selected-sort-by-name="onSortBy"
+            @selected-sort-by-date="onSortBy"
+            @selected-sort-by-price="onSortBy"
+          />
+
+          <WidgetFilter
+            class="mb-4 w-full"
+            filter="categories"
+            @selected-category="(v: any) => onSelectCategory(v)"
+          />
+
+          <WidgetFilter
+            class="mb-4 w-full"
+            filter="price"
+            @selected-price-range="(v: SliderSlideEndEvent) => onSelectPiceRange(v)"
+            :price-range="priceRange"
+          />
+
+          <WidgetFilter
+            class="mb-4 w-full"
+            filter="date"
+            v-model:date-from="dateFrom"
+            v-model:date-to="dateTo"
+          />
+
+          <button
+            @click="onResetFilter"
+            class="bg-slate-500 hover:bg-slate-600 py-2 w-full text-white active:bg-slate-700 active:scale-105"
+          >
+            Reset Filter
+          </button>
         </div>
       </div>
     </ClientOnly>

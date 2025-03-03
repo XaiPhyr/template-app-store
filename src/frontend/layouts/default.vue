@@ -11,5 +11,9 @@
     <div class="block md:hidden">
       <CoreFooter />
     </div>
+
+    <div class="hidden md:block">
+      <CoreScrollToTop />
+    </div>
   </div>
 </template>

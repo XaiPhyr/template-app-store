@@ -14,7 +14,7 @@
   const loadProducts = async () => {
     const params: any = {
       page: 1,
-      size: 5,
+      size: 10,
     };
 
     const data = await readProducts(params);
@@ -30,33 +30,21 @@
 </script>
 
 <template>
-  <div class="p-4">
-    <div class="hidden md:block">
-      <Carousel
-        :value="products"
-        :num-visible="4"
-        :num-scroll="1"
-        :autoplay-interval="3000"
-        circular
-      >
-        <template #item="slotProps">
-          <SharedCard class="mx-4" display="grid" :item="slotProps.data" />
-        </template>
-      </Carousel>
-    </div>
-
-    <div class="block md:hidden">
-      <Carousel
-        :value="products"
-        :num-visible="1"
-        :num-scroll="1"
-        :autoplay-interval="3000"
-        circular
-      >
-        <template #item="slotProps">
-          <SharedCard class="mx-4" display="grid" :item="slotProps.data" />
-        </template>
-      </Carousel>
+  <div class="">
+    <div class="p-4 hidden md:block">
+      <div class="">
+        <Carousel
+          :value="products"
+          :num-visible="5"
+          :num-scroll="1"
+          :autoplay-interval="3000"
+          circular
+        >
+          <template #item="slotProps">
+            <SharedCard class="mx-4" display="grid" :item="slotProps.data" />
+          </template>
+        </Carousel>
+      </div>
     </div>
   </div>
 </template>

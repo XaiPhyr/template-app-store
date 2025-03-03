@@ -52,4 +52,10 @@ const isBefore = (date: string | number) => {
   return dayjs().isBefore(addedTime, 'month');
 };
 
-export { formatDateTime, unixDateTime, readableDateTime, addDateTime, isBefore };
+export {
+  formatDateTime,
+  unixDateTime,
+  readableDateTime,
+  addDateTime,
+  isBefore,
+};

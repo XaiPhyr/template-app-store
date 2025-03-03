@@ -32,7 +32,7 @@
 
     <div :class="`border-t ${isShowingContent ? '' : 'hidden'}`">
       <div class="p-5">
-        <div class="grid grid-cols-3 gap-4 mb-4">
+        <div class="grid grid-cols-3 gap-4 md:mb-4">
           <div class="content-center">Rows:</div>
           <div class="w-full col-span-2">
             <select
@@ -49,25 +49,27 @@
           </div>
         </div>
 
-        <div class="grid grid-cols-3 gap-4">
-          <div class="content-center">Display:</div>
-          <div class="w-full">
-            <button
-              title="Grid"
-              @click="selectDisplay('grid')"
-              class="w-full bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 text-white p-2 flex text-center justify-center"
-            >
-              <i class="pi pi-th-large"></i>
-            </button>
-          </div>
-          <div class="w-full">
-            <button
-              title="List"
-              @click="selectDisplay('list')"
-              class="w-full bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 text-white p-2 flex text-center justify-center"
-            >
-              <i class="pi pi-list"></i>
-            </button>
+        <div class="hidden md:block">
+          <div class="grid grid-cols-3 gap-4">
+            <div class="content-center">Display:</div>
+            <div class="w-full">
+              <button
+                title="Grid"
+                @click="selectDisplay('grid')"
+                class="w-full bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 text-white p-2 flex text-center justify-center"
+              >
+                <i class="pi pi-th-large"></i>
+              </button>
+            </div>
+            <div class="w-full">
+              <button
+                title="List"
+                @click="selectDisplay('list')"
+                class="w-full bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 text-white p-2 flex text-center justify-center"
+              >
+                <i class="pi pi-list"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>

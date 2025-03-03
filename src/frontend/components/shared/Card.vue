@@ -10,6 +10,14 @@
       type: String,
       default: 'grid',
     },
+    hideWishlist: {
+      type: Boolean,
+      default: false,
+    },
+    hideView: {
+      type: Boolean,
+      default: false,
+    },
   });
 
   const popoverRef = ref();
@@ -82,6 +90,7 @@
           </button>
 
           <button
+            v-if="!props.hideWishlist"
             title="wishlist"
             @click="wishList(item)"
             class="border border-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 hover:text-white rounded px-3 py-1 flex justify-center items-center"
@@ -90,6 +99,7 @@
           </button>
 
           <button
+            v-if="!props.hideView"
             title="view"
             @click="viewProduct($event)"
             class="border border-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 active:scale-105 hover:text-white rounded px-3 py-1 flex justify-center items-center"

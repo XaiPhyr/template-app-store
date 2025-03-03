@@ -6,6 +6,26 @@
   const items: any = ref([]);
   const total: Ref<number> = ref(0);
 
+  const hasDiscount = ref(false);
+  const promoAmount = ref(0);
+
+  const props = defineProps({
+    hideCopy: {
+      type: Boolean,
+      default: false,
+    },
+    posCheckout: {
+      type: Boolean,
+      default: false,
+    },
+    voucher: {
+      type: String,
+      default: '',
+    },
+  });
+
+  const emits = defineEmits(['checkout']);
+
   watch(
     () => store.stateCart,
     (value) => {
@@ -47,6 +67,11 @@
       const b64 = btoa(stringify);
       localStorage.setItem('cart', b64);
 
+      if (props.posCheckout) {
+        emits('checkout', b64);
+        return;
+      }
+
       router.push(`/checkout?cart=${b64}`);
     }
   };
@@ -79,6 +104,31 @@
   const quantityInput = (item: any) => {
     item.total = item.price * item.quantity;
   };
+
+  const computedTotal: ComputedRef<number> = computed(() => {
+    if (hasDiscount.value) {
+      const discounted = (total.value * promoAmount.value) / 100;
+
+      return total.value - discounted;
+    }
+
+    return total.value;
+  });
+
+  watch(
+    () => props.voucher,
+    (value) => {
+      if (value) {
+        hasDiscount.value = true;
+        promoAmount.value = 25;
+
+        return;
+      }
+
+      hasDiscount.value = false;
+      promoAmount.value = 0;
+    }
+  );
 </script>
 
 <template>
@@ -97,12 +147,19 @@
               </div>
             </div>
 
+            <div class="grid grid-cols-3" v-if="hasDiscount && total">
+              <div class="col-span-2">
+                Discount <span class="font-bold">({{ voucher }})</span>:
+              </div>
+              <div class="text-right">{{ promoAmount }}%</div>
+            </div>
+
             <hr class="my-2" />
 
             <div class="grid grid-cols-3">
               <div class="text-xl">Total:</div>
               <div class="col-span-2 text-right font-bold text-xl">
-                {{ formatCurrencies(total) }}
+                {{ formatCurrencies(computedTotal) }}
               </div>
             </div>
 
@@ -119,7 +176,7 @@
       </div>
     </div>
 
-    <div class="mb-4">
+    <div v-if="!props.hideCopy" class="mb-4">
       <SharedToasts
         summary="Copied!"
         detail="URL has been copied."
