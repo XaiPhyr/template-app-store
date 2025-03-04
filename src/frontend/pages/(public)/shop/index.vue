@@ -268,7 +268,7 @@
             <div class="flex gap-4 justify-between">
               <div class="relative w-full">
                 <span
-                  class="absolute left-0 top-1/2 transform -translate-y-1/2 px-2 text-gray-500 hover:cursor-pointer"
+                  class="absolute left-0 top-1/2 transform -translate-y-1/2 px-2 text-slate-500 hover:cursor-pointer"
                 >
                   <i class="pi pi-search"></i>
                 </span>
@@ -372,7 +372,7 @@
         :class="openDrawerCart ? 'translate-y-0' : 'translate-y-full'"
       >
         <div class="flex justify-end">
-          <button @click="openDrawerCart = false" class="text-gray-500">
+          <button @click="openDrawerCart = false" class="text-slate-500">
             <i class="pi pi-times" />
           </button>
         </div>
@@ -394,7 +394,7 @@
         :class="openDrawerOptions ? 'translate-y-0' : 'translate-y-full'"
       >
         <div class="flex justify-end">
-          <button @click="openDrawerOptions = false" class="text-gray-500">
+          <button @click="openDrawerOptions = false" class="text-slate-500">
             <i class="pi pi-times" />
           </button>
         </div>

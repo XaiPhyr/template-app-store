@@ -213,7 +213,7 @@
                     <button
                       v-if="item.quantity === 1"
                       @click="store.removeItem(item)"
-                      class="px-2 text-gray-500 hover:text-red-500 hover:scale-110"
+                      class="px-2 text-slate-500 hover:text-red-500 hover:scale-110"
                     >
                       <i class="pi pi-trash"></i>
                     </button>
@@ -221,7 +221,7 @@
                     <button
                       v-if="item.quantity > 1"
                       @click="quantityMinus(item)"
-                      class="px-2 text-gray-500 hover:scale-110"
+                      class="px-2 text-slate-500 hover:scale-110"
                     >
                       <i class="pi pi-minus"></i>
                     </button>
@@ -235,7 +235,7 @@
 
                     <button
                       @click="quantityPlus(item)"
-                      class="px-2 text-gray-500 hover:scale-110"
+                      class="px-2 text-slate-500 hover:scale-110"
                     >
                       <i class="pi pi-plus"></i>
                     </button>

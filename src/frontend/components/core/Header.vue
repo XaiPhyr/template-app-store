@@ -119,14 +119,14 @@
               ></div>
 
               <div class="">
-                <ul>
+                <ul class="first:pt-1 last:pb-1">
                   <li
-                    class="text-gray-700 block px-4 py-2 text-sm hover:bg-indigo-500 hover:text-white hover:cursor-pointer"
+                    class="text-slate-700 block px-4 py-2 text-sm hover:bg-indigo-500 hover:text-white hover:cursor-pointer"
                   >
                     Action I
                   </li>
                   <li
-                    class="text-gray-700 block px-4 py-2 text-sm hover:bg-indigo-500 hover:text-white hover:cursor-pointer"
+                    class="text-slate-700 block px-4 py-2 text-sm hover:bg-indigo-500 hover:text-white hover:cursor-pointer"
                   >
                     Action II
                   </li>

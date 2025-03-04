@@ -40,11 +40,11 @@
               v-model="rowSize"
               class="block appearance-none w-full bg-white border py-2 px-3 leading-tight focus:outline-none focus:ring-2 focus:ring-indigo-500 text-right"
             >
-              <option class="hover:bg-gray-200" :value="10">10</option>
-              <option class="hover:bg-gray-200" :value="15">15</option>
-              <option class="hover:bg-gray-200" :value="25">25</option>
-              <option class="hover:bg-gray-200" :value="50">50</option>
-              <option class="hover:bg-gray-200" :value="100">100</option>
+              <option class="hover:bg-slate-200" :value="10">10</option>
+              <option class="hover:bg-slate-200" :value="15">15</option>
+              <option class="hover:bg-slate-200" :value="25">25</option>
+              <option class="hover:bg-slate-200" :value="50">50</option>
+              <option class="hover:bg-slate-200" :value="100">100</option>
             </select>
           </div>
         </div>

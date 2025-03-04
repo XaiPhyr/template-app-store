@@ -6,13 +6,13 @@ const formatCurrencies = (payload: number) => {
     currency: currency.value,
   };
 
-  const output = new Intl.NumberFormat('en', obj);
+  const formatter = new Intl.NumberFormat('en', obj);
 
   if (!payload) {
-    return output.format(0);
+    return formatter.format(0);
   }
 
-  return output.format(payload);
+  return formatter.format(payload);
 };
 
 const setCurrency = (item: string) => {
@@ -20,4 +20,17 @@ const setCurrency = (item: string) => {
   localStorage.setItem('currency', item);
 };
 
-export { formatCurrencies, setCurrency };
+const formatDecimals = (payload: number | string | any) => {
+  const formatter = new Intl.NumberFormat('en-US', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+
+  if (!payload) {
+    return formatter.format(0);
+  }
+
+  return formatter.format(payload);
+};
+
+export { formatCurrencies, setCurrency, formatDecimals };

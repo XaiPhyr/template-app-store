@@ -102,7 +102,7 @@
       <div class="" v-for="({ name }, index) in categories" :key="index">
         <div class="p-1">
           <div
-            class="px-5 py-1 hover:cursor-pointer active:bg-gray-100"
+            class="px-5 py-1 hover:cursor-pointer active:bg-slate-100"
             @click="selectCategory(name)"
           >
             <div :class="`p-1 ${isSelectedCategory(name)}`">
@@ -117,7 +117,7 @@
       </div>
 
       <div class="p-1 text-xs" @click="onSeeMoreCategories">
-        <div class="px-5 py-1 hover:cursor-pointer active:bg-gray-100">
+        <div class="px-5 py-1 hover:cursor-pointer active:bg-slate-100">
           <div class="p-1 flex justify-end text-blue-500">See more</div>
         </div>
       </div>

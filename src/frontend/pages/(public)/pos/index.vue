@@ -21,6 +21,7 @@
   const productsTotalSize = ref(0);
 
   const paymentMethod = ref('');
+  const amount = ref('0.00');
 
   onMounted(() => {
     loadProducts();
@@ -61,11 +62,30 @@
     return products.value.length > 0;
   });
 
+  const onChangeAmount = (event: any) => {
+    if (event.target.value) {
+      const { value } = event.target;
+      amount.value = formatDecimals(+value.replaceAll(',', ''));
+      return;
+    }
+
+    amount.value = '0.00';
+  };
+
   watch(
     () => voucher.value,
     (value) => {
       if (value === '') {
         appliedVoucher.value = '';
+      }
+    }
+  );
+
+  watch(
+    () => paymentMethod.value,
+    (value) => {
+      if (value !== 'cash') {
+        amount.value = '0.00';
       }
     }
   );
@@ -125,6 +145,29 @@
                         <div class="">Cash</div>
                       </span>
                     </label>
+                  </div>
+
+                  <div class="flex gap-4 mb-4" v-if="paymentMethod === 'cash'">
+                    <label
+                      for="id-cash-amount"
+                      class="font-bold content-center"
+                    >
+                      Amount:
+                    </label>
+                    <div class="relative w-full">
+                      <span
+                        class="absolute left-0 top-1/2 transform -translate-y-1/2 px-2 text-slate-500"
+                      >
+                        <i class="pi pi-money-bill"></i>
+                      </span>
+                      <input
+                        id="id-cash-amount"
+                        type="text"
+                        class="p-2 border w-full focus:outline-indigo-500 text-right pl-8"
+                        :onchange="onChangeAmount"
+                        :value="amount"
+                      />
+                    </div>
                   </div>
 
                   <div class="mb-4">
