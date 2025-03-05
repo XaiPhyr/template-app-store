@@ -1,1 +1,5 @@
-@import 'primeicons/primeicons.css'
+@import 'primeicons/primeicons.css';
+
+html {
+  scrollbar-width: thin;
+}

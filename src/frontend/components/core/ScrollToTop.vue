@@ -23,8 +23,8 @@
 </script>
 
 <template>
-  <div class="" v-if="showButton">
-    <div class="fixed bottom-4 right-4 text-black">
+  <div id="scroll-to-top" class="" v-if="showButton" title="scroll to top">
+    <div class="fixed bottom-4 right-4">
       <button @click="scrollToTop" class="bg-indigo-500 text-white py-2 px-4">
         <i class="pi pi-arrow-up"></i>
       </button>

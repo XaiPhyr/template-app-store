@@ -22,6 +22,10 @@
       type: String,
       default: '',
     },
+    voucherAmount: {
+      type: Number,
+      default: 0,
+    },
   });
 
   const emits = defineEmits(['checkout']);
@@ -68,7 +72,7 @@
       localStorage.setItem('cart', b64);
 
       if (props.posCheckout) {
-        emits('checkout', b64);
+        emits('checkout', computedTotal.value.toFixed(2));
         return;
       }
 
@@ -120,6 +124,12 @@
     (value) => {
       if (value) {
         hasDiscount.value = true;
+
+        if (props.voucherAmount) {
+          promoAmount.value = props.voucherAmount;
+          return;
+        }
+
         promoAmount.value = 25;
 
         return;
@@ -151,7 +161,7 @@
               <div class="col-span-2">
                 Discount <span class="font-bold">({{ voucher }})</span>:
               </div>
-              <div class="text-right">{{ promoAmount }}%</div>
+              <div class="text-right text-red-500">{{ promoAmount }}%</div>
             </div>
 
             <hr class="my-2" />

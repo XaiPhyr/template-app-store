@@ -30,7 +30,7 @@ var (
 	Logger            = middleware.Logger
 	Recoverer         = middleware.Recoverer
 	GetHead           = middleware.GetHead
-	HttpRate          = httprate.LimitByIP(25, LimiterExpiration)
+	HttpRate          = httprate.LimitByIP(50, LimiterExpiration)
 
 	HttpOrigins          = []string{"https://*", "http://*"}
 	HttpMethods          = []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"}

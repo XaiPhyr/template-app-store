@@ -77,7 +77,7 @@
           Added: {{ readableDateTime(item.created_at) }}
         </div>
         <div class="text-sm mt-2 md:hidden block">{{ item.description }}</div>
-        <div class="text-sm mt-2">
+        <div class="text-lg mt-2">
           {{ formatCurrencies(item.price) }}
         </div>
 
@@ -146,7 +146,7 @@
             Added: {{ formatCurrencies(item.price) }}
           </div>
           <div class="text-sm mt-2">{{ item.description }}</div>
-          <div class="text-sm mt-2">
+          <div class="text-lg mt-2">
             {{ formatCurrencies(item.price) }}
           </div>
 
